@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: standup_production
-  username: standup
-  password: <%= ENV['STANDUP_DATABASE_PASSWORD'] %>

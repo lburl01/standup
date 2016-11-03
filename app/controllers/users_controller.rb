@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   def home
+    @users_bulbs = User.bulbs_per_user
+    respond_to do |format|
+      format.json { render json: @users_bulbs }
+      format.html { render :home }
+    end
   end
 
   def create

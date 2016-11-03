@@ -21,9 +21,15 @@ class BulbsController < ApplicationController
       format.json { render json: data }
       format.html { render :index }
     end
-    # render json: data
   end
 
   def create
+    @bulb = Bulb.create(
+      user_id: current_user.id,
+      bright: params['bright'],
+      dim: params['dim'],
+      blocked: params['blocked'],
+      panic_score: params['panic_score']
+      )
   end
 end

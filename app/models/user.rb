@@ -15,4 +15,8 @@ class User < ApplicationRecord
       user.save!
     end
   end
+
+  def self.bulbs_per_user
+    @users_bulbs = Bulb.select("bright, dim, blocked, likes, panic_score, created_at").where(user_id: @current_user).all
+  end
 end

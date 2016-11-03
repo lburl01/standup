@@ -24,5 +24,12 @@ class BulbsController < ApplicationController
   end
 
   def create
+    @bulb = Bulb.create(
+      user_id: current_user.id,
+      bright: params['bright'],
+      dim: params['dim'],
+      blocked: params['blocked'],
+      panic_score: params['panic_score']
+      )
   end
 end

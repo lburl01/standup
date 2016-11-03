@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def home
+    @users_bulbs = User.bulbs_per_user
   end
 
   def create

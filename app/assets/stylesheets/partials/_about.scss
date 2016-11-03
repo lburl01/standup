@@ -1,0 +1,63 @@
+.aboutContainer {
+    position: absolute;
+    top: 100vh;
+    background: rgba(black, .3);
+
+    .aboutH2 {
+        text-align: center;
+        font-family: $cabinSketch;
+        font-size: 2em;
+        margin-top: 20px;
+        color: white;
+    }
+
+    .aboutLI {
+        float: left;
+        padding: 15px 5px 15px 15px;
+        width: 33.33%;
+        font-family: $open;
+        color: white;
+        line-height: 1.5;
+
+        h2 {
+            font-family: $amatica;
+            font-size: 2em;
+        }
+
+        p {
+            font-family: $open;
+            line-height: 1.5;
+        }
+    }
+}
+
+.bulbInfoContainer {
+    position: absolute;
+    bottom: -80vh;
+    background: rgba(black, .3);
+
+    .bulbInfoUL {
+        .bulbInfoLI {
+            color: white;
+            float: left;
+            width: 25%;
+            padding: 15px 5px 15px 15px;
+
+            h2 {
+                font-family: $amatica;
+                font-size: 2em;
+                display: inline;
+            }
+
+            p {
+                font-family: $open;
+                line-height: 1.5;
+            }
+
+            .homeFooterIcon {
+                width: 25px;
+                display: inline;
+            }
+        }
+    }
+}

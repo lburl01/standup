@@ -1,3 +1,28 @@
-<div class="usersHomeContainer">
+<div class="usersHomeContainer" ng-controller="UsersHomeController as user">
 
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>Bulbs</li>
+      </ul>
+    </nav>
+
+    <form class="bulbForm" name="bulbForm">
+
+        <label for="brightBulb">Bright Bulb:</label>
+        <textarea class="brightBulb" name="brightBulb" rows="4" cols="40" placeholder="Share a bright bulb"></textarea>
+
+        <label for="dimBulb">Dim Bulb:</label>
+        <textarea class="dimBulb" name="dimBulb" rows="4" cols="40" placeholder="Share a dim bulb"></textarea>
+
+        <label for="blocker">Blocker:</label>
+        <textarea class="blocker" name="blocker" rows="4" cols="40" placeholder="What's been blocking you lately?"></textarea>
+
+        <label for="panicScore">Panic Score:</label>
+        <select class="panicScore" name="panicScore">
+            <option ng-repeat="score in user.score" value="{{score}}">{{score}}</option>
+        </select>
+        <button type="button" name="submitBulb">Post</button>
+        
+    </form>
 </div>

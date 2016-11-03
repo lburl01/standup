@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
   def create
-    @user = User.from_omniauth(@auth)
     @auth = env["omniauth.auth"]
+    @user = User.from_omniauth(@auth)
     session[:user_id] = @user.id
-    redirect_to root_path
+    redirect_to bulbs_index_path
   end
 end

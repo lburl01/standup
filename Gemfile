@@ -18,7 +18,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'google-api-client', '~> 0.9'
-gem "omniauth-google-oauth2"
+gem "omniauth-google-oauth2", :git => 'https://github.com/zquestz/omniauth-google-oauth2', :branch => 'master'
 gem "figaro"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

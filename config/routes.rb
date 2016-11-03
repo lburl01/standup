@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'bulbs/create'
 
   get 'auth/:provider/callback', to: 'sessions#create'
-  # get 'auth/failure', :to => 'users#failure'
+  get 'auth/failure', :to => 'users#failure'
 
   root to: 'pages#index'
 

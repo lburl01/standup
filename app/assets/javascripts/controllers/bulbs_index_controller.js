@@ -12,4 +12,5 @@ this.getBulbs = function() {
   //   console.log(response);
   // });
   this.getBulbs();
+  
 });

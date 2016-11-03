@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'users/create'
 
   get 'bulbs/index'
+  post 'bulbs/index' => 'bulbs#comment'
 
   get 'bulbs/create'
 

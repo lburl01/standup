@@ -37,4 +37,12 @@ class BulbsController < ApplicationController
     bulb = Bulb.find(params[:id])
     bulb.increment!(:likes)
   end
+
+  def comment
+    @comment = Comment.create(
+    user_id: current_user.id,
+    comment: params['comment'],
+    bulb_id: params['bulb_id']
+    )
+  end
 end

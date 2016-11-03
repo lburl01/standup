@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   validates :name, :email, presence: true
 
+  has_many :bulbs
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.id).first_or_initialize do |user|
       user.provider = auth.provider

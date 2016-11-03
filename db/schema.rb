@@ -10,17 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102235400) do
+ActiveRecord::Schema.define(version: 20161103012433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "authorizations", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
+  create_table "bulbs", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "bright"
+    t.text     "dim"
+    t.text     "blocked"
+    t.integer  "likes",       default: 0
+    t.integer  "panic_score", default: 0
+    t.boolean  "is_deleted?", default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["user_id"], name: "index_bulbs_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,4 +39,5 @@ ActiveRecord::Schema.define(version: 20161102235400) do
     t.string   "oauth_expires_at"
   end
 
+  add_foreign_key "bulbs", "users"
 end

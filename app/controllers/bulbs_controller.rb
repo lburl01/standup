@@ -32,4 +32,9 @@ class BulbsController < ApplicationController
       panic_score: params['panic_score']
       )
   end
+
+  def increment
+    bulb = Bulb.find(params[:id])
+    bulb.increment!(:likes)
+  end
 end

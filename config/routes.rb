@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get 'users/home'
   post 'users/home' => 'bulbs#create'
+  patch 'users/home' => 'bulbs#increment'
 
   get 'users/create'
 

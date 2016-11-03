@@ -1,0 +1,121 @@
+@import url( 'https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans');
+@import url( 'https://fonts.googleapis.com/css?family=Cabin+Sketch');
+$amatica: 'Amatic SC', cursive;
+$open: 'Open Sans', sans-serif;
+$cabinSketch: 'Cabin Sketch', cursive;
+@mixin center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.homeContainer {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+
+    .homeHeaderH2 {
+        font-family: $cabinSketch;
+        font-size: 3em;
+        text-align: center;
+    }
+
+    .homeHeaderP {
+        margin-top: 10px;
+        font-family: $open;
+        font-size: 1em;
+        color: black;
+        text-align: center;
+    }
+
+    .homeVideo {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -100;
+    }
+
+    .homeHeaderContainer {
+        @include center();
+        top: 20%;
+    }
+
+    .homeLoginBtn {
+        @include center();
+        top: 50%;
+        // background-color: #232323;
+        border-radius: 5px;
+        padding: 10px;
+
+        &:hover {}
+
+        p {
+            font-family: $amatica;
+            cursor: pointer;
+            font-size: 2em;
+
+            &:hover {
+                transform: scale(1.5);
+                color: yellow;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 0 9px 0 rgba(0,0,0,0.5);
+                animation: neon 1.5s ease-in-out infinite alternate;
+            }
+        }
+    }
+
+    .bulbInfoContainer {
+      position: absolute;
+      bottom: -77vh;
+      background: rgba(black, .3);
+        .bulbInfoUL {
+
+            .bulbInfoLI {
+                color: white;
+                float: left;
+                width: 25%;
+                padding: 15px 5px 15px 15px;
+
+                h2 {
+                  font-family: $amatica;
+                  font-size: 2em;
+                  display: inline;
+                }
+
+                p {
+                  font-family: $open;
+                  line-height: 1.5;
+                }
+
+                .homeFooterIcon {
+                  margin-left: 20%;
+                  width: 25px;
+                  display: inline;
+                }
+            }
+        }
+    }
+
+    .aboutContainer {
+      position: absolute;
+      bottom: -27vh;
+      background: rgba(black, .3);
+    }
+}
+@keyframes neon {
+    0% {
+        text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 25px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 90px #FF9900, 0 0 90px #FF9900;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900;
+    }
+}

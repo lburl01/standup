@@ -1,5 +1,70 @@
-<h1>Pages#index</h1>
-<div ng-controller="PagesIndexController as pages">
-{{pages.message}}
+<div class="homeContainer">
+  <%= video_tag "Particle.mp4", {class: 'homeVideo'}, autoplay: true, loop: true%>
+<div class="homeHeaderContainer">
+  <h2 class="homeHeaderH2">StandUp:</h2>
+  <p class="homeHeaderP">
+    Share, interact and collaborate with the wider dev community.
+  </p>
 </div>
-<p>Find me in app/views/pages/index.html.erb</p>
+<div class="homeLoginBtn">
+  <p>
+    Continue
+  </p>
+</div>
+<div class="bulbInfoContainer">
+  <ul class="bulbInfoUL">
+    <li class="bulbInfoLI">
+      <%= image_tag("brightbulb.png", :alt => "lamp by Elves Sousa from the Noun Project", :class => "homeFooterIcon") %>
+      <h2>Bright Bulb</h2>
+      <p>
+        A bright bulb could be a recent breakthrough or aha moment you recently had, an inspiring conversation or just a plain feel-good moment. What's making you love your job right now?
+      </p>
+    </li>
+    <li class="bulbInfoLI">
+      <%= image_tag("dimbulb.png", :alt => "lamp by Elves Sousa from the Noun Project", :class => "homeFooterIcon") %>
+      <h2>Dim Bulb</h2>
+      <p>
+        A dim bulb is the opposite of a bright bulb. Whatever niggling anxiety, pet peeve or massive soul-crushing issue made you wake up on the wrong side of the bed is your dim bulb.
+      </p>
+    </li>
+    <li class="bulbInfoLI">
+      <%= image_tag("blocker.png", :alt => "wall by TDL-LONDON from the Noun Project", :class => "homeFooterIcon") %>
+        <h2>Blocker</h2>
+        <p>
+          Your blocker is anything that's keeping you from doing what you need to do, whether it's a root canal, a software bug or your own lack of understanding of a certain topic.
+        </p>
+      </li>
+      <li class="bulbInfoLI">
+        <%= image_tag("panic.png", :alt => "Head by Eliricon from the Noun Project", :class => "homeFooterIcon") %>
+        <h2>Panic Score</h2>
+        <p>
+          On a scale of 1-10, how panicked are you feeling? 1 is your happy place 10 is total meltdown, you take it from there.
+        </p>
+      </li>
+
+  </ul>
+</div>
+
+<div class="aboutContainer">
+  <ul class="">
+    <li class="aboutLI">
+      <h2>Post a Bulb</h2>
+      <p>
+        In the web dev community (and life in general) I think we can all accept that there are ups and downs to every project. <br><br>That's why instead of posting plain old status updates, Standup Users post bulbs. Bulbs have four components: a dim bulb, which is what you're currently struggling with, a bright bulb, which is a win, a blocker, which could be any issue or problem that's tripping you up, and a panic score (which is pretty self explanatory).
+      </p>
+    </li>
+    <li class="aboutLI">
+      <h2>Be a Part of the Bulb Community!</h2>
+      <p>
+        Cheer on, sympathize or share your knowledge with others by liking and commenting on their bulbs in the Bulb Timeline.
+      </p>
+      <li class="aboutLI">
+        <h2>View Progress Over Time</h2>
+        <p>
+          Whether you're picking up a new language, switching jobs or putting out website fires all day, it's helpful to track your state of mind. Track your 'panic level' over time and see how far you've come when last week's dim bulb is this week's piece of cake.
+        </p>
+      </li>
+  </ul>
+</div>
+
+</div>

@@ -1,0 +1,23 @@
+.userHomeNav {
+    width: 100vw;
+    background: rgba(#232323, .5);
+    overflow: hidden;
+
+    ul {
+        li {
+            .navIcon {
+                width: 50px;
+                z-index: 5;
+            }
+            margin: 10px 0 10px 40px;
+            float: left;
+            color: white;
+            font-family: $amatica;
+            font-size: 3em;
+
+            &:hover {
+              @include hover();
+            }
+        }
+    }
+}

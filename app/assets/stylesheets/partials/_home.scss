@@ -12,6 +12,10 @@
         font-family: $cabinSketch;
         font-size: 3em;
         text-align: center;
+
+        .headerIcon {
+          width: 50px;
+        }
     }
 
     .homeHeaderP {
@@ -56,11 +60,10 @@
             box-shadow: 0 0 9px 0 rgba(0,0,0,0.5);
 
             &:hover {
-                  color: yellow;
                   padding: 10px;
                   border-radius: 5px;
-                  animation: neon 1.5s ease-in-out infinite alternate;
                   transform: scale(1.25);
+                  @include hover();
             }
         }
     }
@@ -76,10 +79,7 @@
       box-shadow: 0 0 9px 0 rgba(0,0,0,0.5);
 
       &:hover {
-        color: yellow;
-        padding: 10px;
-        border-radius: 5px;
-        animation: neon 1.5s ease-in-out infinite alternate;
+        @include hover();
       }
 
     }

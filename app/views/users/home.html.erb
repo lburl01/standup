@@ -1,7 +1,8 @@
 <div class="usersHomeContainer" ng-controller="UsersHomeController as user">
 
-    <nav>
+    <nav class="userHomeNav">
       <ul>
+        <li> <%= image_tag("lightbulb.png", :alt => "Idea by Davo Sime from the Noun Project", :class => "navIcon") %></li>
         <li>Home</li>
         <li>Bulbs</li>
       </ul>
@@ -23,6 +24,6 @@
             <option ng-repeat="score in user.score" value="{{score}}">{{score}}</option>
         </select>
         <button type="button" name="submitBulb">Post</button>
-        
+
     </form>
 </div>

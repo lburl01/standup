@@ -3,3 +3,8 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+@mixin hover {
+  color: yellow;
+  animation: neon 1.5s ease-in-out infinite alternate;
+}

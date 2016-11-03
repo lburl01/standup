@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  has_many :authorizations
   validates :name, :email, presence: true
 
   def self.from_omniauth(auth)

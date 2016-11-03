@@ -5,3 +5,4 @@
 //= require_tree ./services
 //= require_tree ./factories
 //= require_tree ./controllers
+//= require jquery

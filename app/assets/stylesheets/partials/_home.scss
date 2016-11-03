@@ -1,8 +1,10 @@
 @import url( 'https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans');
 @import url( 'https://fonts.googleapis.com/css?family=Cabin+Sketch');
+
 $amatica: 'Amatic SC', cursive;
 $open: 'Open Sans', sans-serif;
 $cabinSketch: 'Cabin Sketch', cursive;
+
 @mixin center {
     position: absolute;
     left: 50%;
@@ -44,34 +46,81 @@ $cabinSketch: 'Cabin Sketch', cursive;
 
     .homeHeaderContainer {
         @include center();
-        top: 20%;
+        top: 30%;
     }
 
-    .homeLoginBtn {
+    .homeBtnContainer {
         @include center();
-        top: 55%;
+        top: 60%;
         border-radius: 5px;
         padding: 10px;
-        box-shadow: 0 0 9px 0 rgba(0,0,0,0.5);
 
-        &:hover > p {
-          color: yellow;
-          padding: 10px;
-          border-radius: 5px;
-          animation: neon 1.5s ease-in-out infinite alternate;
-          transform: scale(1.25);
-        }
+        // &:hover > li {
+        //     color: yellow;
+        //     padding: 10px;
+        //     border-radius: 5px;
+        //     animation: neon 1.5s ease-in-out infinite alternate;
+        //     transform: scale(1.25);
+        // }
 
-        p {
+        li {
+            border-radius: 5px;
+            padding: 10px;
+            margin-right: 20px;
+            margin-left: 20px;
+            float:left;
+            list-style: none;
             font-family: $amatica;
             cursor: pointer;
             font-size: 2em;
+            box-shadow: 0 0 9px 0 rgba(0,0,0,0.5);
+
+            &:hover {
+                  color: yellow;
+                  padding: 10px;
+                  border-radius: 5px;
+                  animation: neon 1.5s ease-in-out infinite alternate;
+                  transform: scale(1.25);
+            }
+        }
+    }
+
+    .aboutContainer {
+        position: absolute;
+        top: 100vh;
+        background: rgba(black, .3);
+
+        .aboutH2 {
+            text-align: center;
+            font-family: $cabinSketch;
+            font-size: 2em;
+            margin-top: 20px;
+            color: white;
+        }
+
+        .aboutLI {
+            float: left;
+            padding: 15px 5px 15px 15px;
+            width: 33.33%;
+            font-family: $open;
+            color: white;
+            line-height: 1.5;
+
+            h2 {
+                font-family: $amatica;
+                font-size: 2em;
+            }
+
+            p {
+                font-family: $open;
+                line-height: 1.5;
+            }
         }
     }
 
     .bulbInfoContainer {
         position: absolute;
-        bottom: -85vh;
+        bottom: -80vh;
         background: rgba(black, .3);
 
         .bulbInfoUL {
@@ -100,39 +149,26 @@ $cabinSketch: 'Cabin Sketch', cursive;
         }
     }
 
-    .aboutContainer {
-        position: absolute;
-        bottom: -39vh;
-        background: rgba(black, .3);
+    .backToTopBtn {
+      @include center();
+      bottom: -10vh;
+      border-radius: 5px;
+      padding: 10px;
+      font-family: $amatica;
+      cursor: pointer;
+      font-size: 1.5em;
+      box-shadow: 0 0 9px 0 rgba(0,0,0,0.5);
 
-        .aboutH2 {
-            text-align: center;
-            font-family: $cabinSketch;
-            font-size: 2em;
-            margin: 10px;
-            color: white;
-        }
+      &:hover {
+        color: yellow;
+        padding: 10px;
+        border-radius: 5px;
+        animation: neon 1.5s ease-in-out infinite alternate;
+      }
 
-        .aboutLI {
-            float: left;
-            padding: 15px 5px 15px 15px;
-            width: 33.33%;
-            font-family: $open;
-            color: white;
-            line-height: 1.5;
-
-            h2 {
-                font-family: $amatica;
-                font-size: 2em;
-            }
-
-            p {
-                font-family: $open;
-                line-height: 1.5;
-            }
-        }
     }
 }
+
 @keyframes neon {
     0% {
         text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 25px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 90px #FF9900, 0 0 90px #FF9900;

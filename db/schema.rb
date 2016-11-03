@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20161103014027) do
     t.text     "blocked"
     t.integer  "likes",       default: 0
     t.integer  "panic_score", default: 0
-    t.boolean  "is_deleted?", default: false
+    t.boolean  "is_deleted",  default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.index ["user_id"], name: "index_bulbs_on_user_id", using: :btree

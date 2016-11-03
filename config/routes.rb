@@ -1,4 +1,15 @@
+class AuthConstraint
+  def matches?(request)
+    request.session[:user_id].present?
+  end
+end
+
 Rails.application.routes.draw do
+
+  constraints(AuthConstraint.new) do
+    root :to => 'bulbs#index'
+  end
+
   get 'sessions/create'
 
   get 'users/home'

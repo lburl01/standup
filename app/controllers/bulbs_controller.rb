@@ -21,7 +21,6 @@ class BulbsController < ApplicationController
       format.json { render json: data }
       format.html { render :index }
     end
-    # render json: data
   end
 
   def create

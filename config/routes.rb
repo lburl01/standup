@@ -7,12 +7,13 @@ end
 Rails.application.routes.draw do
 
   constraints(AuthConstraint.new) do
-    root :to => 'bulbs#index'
+    root to: 'bulbs#index'
   end
 
   get 'sessions/create'
 
   get 'users/home'
+  post 'users/home' => 'bulbs#create'
 
   get 'users/create'
 

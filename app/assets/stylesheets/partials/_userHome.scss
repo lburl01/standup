@@ -1,1 +1,18 @@
+.bulbForm {
+  background: #232323;
+  width: 70%;
+  margin: 20px auto;
+  border-radius: 5px;
+  padding: 20px;
 
+  label {
+    color: white;
+    // display: block;
+    margin: 5px;
+  }
+
+  textarea {
+    width: 100%;
+    border-radius: 5px;
+  }
+}

@@ -14,10 +14,14 @@ class BulbsController < ApplicationController
       panic_score = bulbs.panic_score
       comments = bulbs.user.comments
 
-      data << { "bulb_id" => bulb_id, "bulb created" => bulb_created, "bulb writer" => bulb_owner, "bright" => bright_bulb, "dim" => dim_bulb, "blocked" => blocked, "likes" => likes, "panic_score" => panic_score, "comment data" => comments}
+      data << { "bulb_id" => bulb_id, "bulb_created" => bulb_created, "bulb_writer" => bulb_owner, "bright" => bright_bulb, "dim" => dim_bulb, "blocked" => blocked, "likes" => likes, "panic_score" => panic_score, "comment_data" => comments}
     end
 
-    render json: data
+    respond_to do |format|
+      format.json { render json: data }
+      format.html { render :index }
+    end
+    # render json: data
   end
 
   def create

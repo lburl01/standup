@@ -1,6 +1,18 @@
-<h1>Bulbs#index</h1>
-<h1>Timeline</h1>
-<div ng-controller="BulbsIndexController as bulbs">
-  {{bulbs.message}}
+<nav class="userHomeNav">
+  <div class="title">
+    StandUp<%= image_tag("lightbulb.png", :alt => "Idea by Davo Sime from the Noun Project", :class => "navIcon") %>
+  </div>
+  <ul>
+    <li>Home</li>
+    <li>Create</li>
+    <li>Bulbs</li>
+  </ul>
+</nav>
+
+<div class="bulbsContainer" ng-controller="BulbsIndexController as timeline">
+<div class="bulbCard" ng-repeat="bulb in timeline.bulbs">
+<p>
+  {{bulb}}
+</p>
 </div>
-<p>Find me in app/views/bulbs/index.html.erb</p>
+</div>

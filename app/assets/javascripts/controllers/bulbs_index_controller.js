@@ -1,15 +1,19 @@
-angular.module('standupApp').controller('BulbsIndexController', function() {
-  this.message = 'in bulbs index controller';
+angular.module('standupApp').controller('BulbsIndexController', function($q) {
+    this.message = 'in bulbs index controller';
+    // this.bulbs = [];
 
-this.getBulbs = function() {
-  $.get('index', function(response) {
-    console.log(response);
-    console.log(response[0].comment_data[0].comment);
-  });
-};
-  // $q.when(bulbs.get()).then(function(response) {
-  //   console.log(response);
-  // });
-  this.getBulbs();
+    this.buildBulbs = function(response) {
+        this.bulbs = response;
+        console.log(this.bulbs);
+    };
 
+    this.getBulbs = function() {
+      var self = this;
+        $.when($.ajax("index")).then(function(response, textStatus, jqXHR) {
+            console.log(jqXHR.status);
+            self.buildBulbs(response);
+        });
+    };
+
+    this.getBulbs();
 });

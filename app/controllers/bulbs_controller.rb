@@ -26,13 +26,18 @@ class BulbsController < ApplicationController
   end
 
   def create
-    @bulb = Bulb.create(
+    @bulb = Bulb.new(
       user_id: current_user.id,
       bright: params['bright'],
       dim: params['dim'],
       blocked: params['blocked'],
       panic_score: params['panic_score']
-      )
+    )
+    if @bulb.valid?
+      @bulb.save
+    else
+      render_error @bulb.errors.full_messages
+    end
   end
 
   def increment
@@ -42,9 +47,14 @@ class BulbsController < ApplicationController
 
   def comment
     @comment = Comment.create(
-    user_id: current_user.id,
-    comment: params['comment'],
-    bulb_id: params['bulb_id']
+      user_id: current_user.id,
+      comment: params['comment'],
+      bulb_id: params['bulb_id']
     )
+    if @comment.valid?
+      @comment.save
+    else
+      render_error @comment.errors.full_messages
+    end
   end
 end

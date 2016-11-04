@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
+  
   def home
     @users_bulbs = User.bulbs_per_user
     respond_to do |format|

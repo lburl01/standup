@@ -14,47 +14,38 @@
 <div class="bulbCard" ng-repeat="bulb in timeline.allBulbs">
   <ul class="bulbList">
     <li>
-      <p>
-        Author: {{bulb.bulb_writer}}
-      </p>
+      <p>{{bulb.bulb_writer}}</p>
     </li>
     <li>
-      <p>
-        Likes: {{bulb.likes}}
-      </p>
+      <p class='likes'>Likes: {{bulb.likes}}</p>
+      <button type="button" name="likeBtn" class="likeBtn">Like</button>
     </li>
     <li>
       <%= image_tag("brightbulb.png", :alt => "lamp by Elves Sousa from the Noun Project", :class => "bulbIcon") %>
-      <p>
-        Bright Bulb: {{bulb.bright}}
-      </p>
+      <p> {{bulb.bright}}</p>
     </li>
     <li>
       <%= image_tag("dimbulb.png", :alt => "lamp by Elves Sousa from the Noun Project", :class => "bulbIcon") %>
-      <p>
-        Dim Bulb: {{bulb.dim}}
-      </p>
+      <p> {{bulb.dim}}</p>
     </li>
     <li>
       <%= image_tag("blocker.png", :alt => "wall by TDL-LONDON from the Noun Project", :class => "bulbIcon") %>
-      <p>
-        Blocker: {{bulb.blocked}}
-      </p>
+      <p> {{bulb.blocked}}</p>
     </li>
     <li>
       <%= image_tag("panic.png", :alt => "Head by Eliricon from the Noun Project", :class => "bulbIcon") %>
-      <p>
-        Panic Score: {{bulb.panic_score}}
-      </p>
+      <p>Panic Score: {{bulb.panic_score}}</p>
     </li>
-    <ul class=commentList>Comments
+    <ul class=commentList ng-repeat="comment in bulb.comment_data">Comments
       <li>
-        <p>
-          Comments 1
-        </p>
+        <p>{{comment.comment}}</p>
       </li>
     </ul>
   </ul>
+  <form class="addComment" name="commentForm" action="index.html" method="post">
+    <input type="text" name="commentInput" value="" ng-model=timeline.comment>
+    <button type="button" name="">Comment</button>
+  </form>
 </div>
 
 </div>

@@ -3,22 +3,32 @@
     background: $black;
     overflow: hidden;
 
-    ul {
-        li {
-            .navIcon {
-                width: 50px;
-                z-index: 5;
-                @include inset-type();
+    .navIcon {
+        width: 30px;
+        z-index: 5;
+        @include inset-type();
+    }
 
-            }
-            margin: 10px 0 10px 40px;
+    .title {
+        float: left;
+        font-family: $cabinSketch;
+        font-size: 2em;
+        margin: 10px 0 10px 40px;
+        color: white;
+    }
+
+    ul {
+        float: right;
+
+        li {
+            margin: 10px 10px 10px 40px;
             float: left;
             font-family: $open;
-            font-size: 3em;
+            font-size: 2em;
             @include inset-type();
 
             &:hover {
-              @include hover();
+                @include hover();
             }
         }
     }

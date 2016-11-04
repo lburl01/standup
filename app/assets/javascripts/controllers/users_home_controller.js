@@ -18,7 +18,7 @@ angular.module('standupApp').controller('UsersHomeController', function() {
         console.log(this.bulb);
         $.ajax({
           type: 'POST',
-          url: 'users/home',
+          url: 'home',
           data: this.bulb,
           success: function() {
             console.log('Ajax post worked!');

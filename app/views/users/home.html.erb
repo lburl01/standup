@@ -1,8 +1,12 @@
 <div class="usersHomeContainer" ng-controller="UsersHomeController as user">
     <nav class="userHomeNav">
+      <div class="title">
+        StandUp<%= image_tag("lightbulb.png", :alt => "Idea by Davo Sime from the Noun Project", :class => "navIcon") %>
+      </div>
       <ul>
-        <li> <%= image_tag("lightbulb.png", :alt => "Idea by Davo Sime from the Noun Project", :class => "navIcon") %></li>
+        <!-- <li> <%= image_tag("lightbulb.png", :alt => "Idea by Davo Sime from the Noun Project", :class => "navIcon") %></li> -->
         <li>Home</li>
+        <li>Create</li>
         <li>Bulbs</li>
       </ul>
     </nav>

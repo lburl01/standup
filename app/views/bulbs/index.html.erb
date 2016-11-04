@@ -11,45 +11,50 @@
   </ul>
 </nav>
 
-<div class="bulbCard" ng-repeat="bulb in timeline.allBulbs">
+<!-- <div class="bulbCard" ng-repeat="bulb in timeline.allBulbs">
   <li>Bright Bulb:{{bulb.bright}}</li>
   <li>Dim Bulb:{{bulb.dim}}</li>
   <li>Blocker:{{bulb.blocked}}</li>
-  <li>Panic Score: {{bulb.panic_score}}</li>
+  <li>Panic Score: {{bulb.panic_score}}</li> -->
   <!-- <ul ng-repeat="comment in timeline.bulbs.comment_data">
     <li>Comments:{{comment}}</li>
   </ul> -->
-</div>
+<!-- </div> -->
 
-<!-- <div class="bulbCard">
+<div class="bulbCard" ng-repeat="bulb in timeline.allBulbs">
   <ul class="bulbList">
     <li>
       <p>
-        Likes:
+        Author: {{bulb.bulb_writer}}
+      </p>
+    </li>
+    <li>
+      <p>
+        Likes: {{bulb.likes}}
       </p>
     </li>
     <li>
       <%= image_tag("brightbulb.png", :alt => "lamp by Elves Sousa from the Noun Project", :class => "bulbIcon") %>
       <p>
-        Bright Bulb:
+        Bright Bulb: {{bulb.bright}}
       </p>
     </li>
     <li>
       <%= image_tag("dimbulb.png", :alt => "lamp by Elves Sousa from the Noun Project", :class => "bulbIcon") %>
       <p>
-        Dim Bulb:
+        Dim Bulb: {{bulb.dim}}
       </p>
     </li>
     <li>
       <%= image_tag("blocker.png", :alt => "wall by TDL-LONDON from the Noun Project", :class => "bulbIcon") %>
       <p>
-        Blocker:
+        Blocker: {{bulb.blocked}}
       </p>
     </li>
     <li>
       <%= image_tag("panic.png", :alt => "Head by Eliricon from the Noun Project", :class => "bulbIcon") %>
       <p>
-        Panic Score:
+        Panic Score: {{bulb.panic_score}}
       </p>
     </li>
     <ul class=commentList>Comments
@@ -60,6 +65,6 @@
       </li>
     </ul>
   </ul>
-</div> -->
+</div>
 
 </div>

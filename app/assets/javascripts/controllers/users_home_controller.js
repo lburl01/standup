@@ -15,13 +15,12 @@ angular.module('standupApp').controller('UsersHomeController', function() {
     };
 
     this.createBulb = function(brightBulb, dimBulb, blocker) {
-        console.log(this.bulb);
         $.ajax({
           type: 'POST',
           url: 'home',
           data: this.bulb,
           success: function() {
-            console.log('Ajax post worked!');
+            // do something?
           }
         });
     };

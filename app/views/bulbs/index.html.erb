@@ -10,9 +10,10 @@
 </nav>
 
 <div class="bulbsContainer" ng-controller="BulbsIndexController as timeline">
-<div class="bulbCard" ng-repeat="bulb in timeline.bulbs">
-<p>
-  {{bulb}}
-</p>
+<div class="bulbCard" ng-model="timeline.bulbs" ng-repeat="bulb in timeline.bulbs">
+  <li>{{bulb.bright}}</li>
 </div>
+<p>
+{{timeline.allBulbs}}
+</p>
 </div>

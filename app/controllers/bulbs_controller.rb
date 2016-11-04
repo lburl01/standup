@@ -19,6 +19,8 @@ class BulbsController < ApplicationController
       data << { "bulb_id" => bulb_id, "bulb_created" => bulb_created, "bulb_writer" => bulb_owner, "bright" => bright_bulb, "dim" => dim_bulb, "blocked" => blocked, "likes" => likes, "panic_score" => panic_score, "comment_data" => comments}
     end
 
+    data = data.sort_by { |bulb| bulb["bulb_created"]}.reverse
+
     respond_to do |format|
       format.json { render json: data }
       format.html { render :index }

@@ -1,7 +1,21 @@
 .bulbsContainer {
-  width: 75%;
-  margin: 20px auto;
-  // background: red;
-  border: 1px solid black;
-  height: 300px;
+  width: 100vw;
+  height: 100vh;
+  background: $background;
+}
+
+.bulbCard {
+  margin: 60px auto;
+  width: 55%;
+  border-radius: 5px;
+  padding: 20px;
+  background: white;
+  box-shadow: $box-shadow;
+  position: relative;
+  clear: both;
+
+  .bulbIcon {
+    width: 30px;
+  }
+
 }

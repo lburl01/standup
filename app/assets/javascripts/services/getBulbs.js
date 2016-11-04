@@ -1,14 +1,14 @@
-angular.module('standupApp').service('getBulbsService', getBulbs);
-
-function getBulbs($http) {
-  function fetchBulbs() {
-    return $http({
-      method: "GET",
-      url: "http://jservice.io/api/random"
-    });
+angular.module('standupApp').service('getBulbsService', function($http) {
+  function getBulbs() {
+      return $http({
+        method: "GET",
+        url: "/bulbs/index.json"
+      }).then(function(response) {
+        return response.data;
+      });
   }
-
   return {
-    get: fetchBulbs
+    get: getBulbs
   };
-}
+
+});

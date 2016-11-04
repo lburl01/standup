@@ -11,16 +11,15 @@
   </ul>
 </nav>
 
-<!-- <div class="bulbCard" ng-model="timeline.bulbs" ng-repeat="bulb in timeline.bulbs">
-  <li>Likes:{{bulb.likes}}</li>
-  <li>Bright Bulb: {{bulb.bright}}</li>
+<div class="bulbCard" ng-repeat="bulb in timeline.allBulbs">
+  <li>Bright Bulb:{{bulb.bright}}</li>
   <li>Dim Bulb:{{bulb.dim}}</li>
   <li>Blocker:{{bulb.blocked}}</li>
   <li>Panic Score: {{bulb.panic_score}}</li>
-  <ul ng-repeat="comment in timeline.bulbs.comment_data">
+  <!-- <ul ng-repeat="comment in timeline.bulbs.comment_data">
     <li>Comments:{{comment}}</li>
-  </ul>
-</div> -->
+  </ul> -->
+</div>
 
 <!-- <div class="bulbCard">
   <ul class="bulbList">
@@ -63,7 +62,4 @@
   </ul>
 </div> -->
 
-<p>
-{{timeline.test}}
-</p>
 </div>

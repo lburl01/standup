@@ -33,11 +33,9 @@ class BulbsController < ApplicationController
       blocked: params['blocked'],
       panic_score: params['panic_score']
     )
-    if @bulb.valid?
-      @bulb.save
-    else
-      render_error @bulb.errors.full_messages
-    end
+      if @bulb.valid?
+        @bulb.save
+      end
   end
 
   def increment
@@ -53,8 +51,6 @@ class BulbsController < ApplicationController
     )
     if @comment.valid?
       @comment.save
-    else
-      render_error @comment.errors.full_messages
     end
   end
 end

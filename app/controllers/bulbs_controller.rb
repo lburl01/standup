@@ -33,9 +33,14 @@ class BulbsController < ApplicationController
       blocked: params['blocked'],
       panic_score: params['panic_score']
     )
+    respond_to do |format|
       if @bulb.valid?
         @bulb.save
+        :created
+      else
+        format.json { render json: @bulb.errors.full_messages, status: :unprocessable_entity }
       end
+    end
   end
 
   def increment
@@ -49,8 +54,13 @@ class BulbsController < ApplicationController
       comment: params['comment'],
       bulb_id: params['bulb_id']
     )
-    if @comment.valid?
-      @comment.save
+    respond_to do |format|
+      if @comment.valid?
+        @comment.save
+        :created
+      else
+        format.json { render json: @comment.errors.full_messages, status: :unprocessable_entity }
+      end
     end
   end
 end

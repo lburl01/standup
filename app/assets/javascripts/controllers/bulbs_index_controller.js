@@ -1,15 +1,11 @@
-angular.module('standupApp').controller('BulbsIndexController', function() {
-  this.message = 'in bulbs index controller';
+angular.module('standupApp').controller('BulbsIndexController', function($http, getBulbsService) {
 
-this.getBulbs = function() {
-  $.get('index', function(response) {
-    console.log(response);
-    console.log(response[0].comment_data[0].comment);
-  });
-};
-  // $q.when(bulbs.get()).then(function(response) {
-  //   console.log(response);
-  // });
-  this.getBulbs();
+var self = this;
+
+var currentBulb = getBulbsService.get();
+currentBulb.then(function(response) {
+  console.log(response);
+  self.allBulbs = response;
+});
 
 });

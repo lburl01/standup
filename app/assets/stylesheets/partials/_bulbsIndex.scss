@@ -1,0 +1,36 @@
+.bulbsContainer {
+    width: 100vw;
+    height: 100vh;
+    background: $background;
+}
+
+.bulbCard {
+    margin: 60px auto;
+    width: 55%;
+    border-radius: 5px;
+    padding: 20px;
+    background: white;
+    box-shadow: $box-shadow;
+    position: relative;
+    clear: both;
+    font-family: $open;
+
+    li {
+      padding: 10px;
+
+        .bulbIcon {
+            width: 30px;
+            display: inline;
+            float: left;
+        }
+
+        p {
+          display: inline;
+          margin-left: 10px;
+        }
+    }
+    .commentList {
+      background: lightblue;
+      padding: 10px;
+    }
+}

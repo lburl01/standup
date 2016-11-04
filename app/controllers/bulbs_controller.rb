@@ -19,6 +19,8 @@ class BulbsController < ApplicationController
       data << { "bulb_id" => bulb_id, "bulb_created" => bulb_created, "bulb_writer" => bulb_owner, "bright" => bright_bulb, "dim" => dim_bulb, "blocked" => blocked, "likes" => likes, "panic_score" => panic_score, "comment_data" => comments}
     end
 
+    data = data.sort_by { |bulb| bulb["bulb_created"]}.reverse
+
     respond_to do |format|
       format.json { render json: data }
       format.html { render :index }
@@ -26,13 +28,21 @@ class BulbsController < ApplicationController
   end
 
   def create
-    @bulb = Bulb.create(
+    @bulb = Bulb.new(
       user_id: current_user.id,
       bright: params['bright'],
       dim: params['dim'],
       blocked: params['blocked'],
       panic_score: params['panic_score']
-      )
+    )
+    respond_to do |format|
+      if @bulb.valid?
+        @bulb.save
+        :created
+      else
+        format.json { render json: @bulb.errors.full_messages, status: :unprocessable_entity }
+      end
+    end
   end
 
   def increment
@@ -42,9 +52,17 @@ class BulbsController < ApplicationController
 
   def comment
     @comment = Comment.create(
-    user_id: current_user.id,
-    comment: params['comment'],
-    bulb_id: params['bulb_id']
+      user_id: current_user.id,
+      comment: params['comment'],
+      bulb_id: params['bulb_id']
     )
+    respond_to do |format|
+      if @comment.valid?
+        @comment.save
+        :created
+      else
+        format.json { render json: @comment.errors.full_messages, status: :unprocessable_entity }
+      end
+    end
   end
 end

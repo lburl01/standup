@@ -1,4 +1,4 @@
-angular.module('standupApp').controller('BulbsIndexController', function($http, getBulbsService) {
+angular.module('standupApp').controller('BulbsIndexController', ["$http", "getBulbsService", function($http, getBulbsService) {
 
 var self = this;
 
@@ -12,4 +12,4 @@ this.loadBulbs = function() {
 };
 
 this.loadBulbs();
-});
+}]);

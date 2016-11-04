@@ -1,18 +1,66 @@
-.bulbForm {
-  background: #232323;
-  width: 70%;
-  margin: 20px auto;
-  border-radius: 5px;
-  padding: 20px;
+.usersHomeContainer {
+    width: 100vw;
+    height: 100vh;
+    background: image-url('paperBackground.png');
 
-  label {
-    color: white;
-    // display: block;
-    margin: 5px;
-  }
+    .bulbForm {
+        width: 55%;
+        margin: 60px auto;
+        border-radius: 5px;
+        padding: 20px;
+        background: $gradient;
+        position: relative;
+        clear: both;
 
-  textarea {
-    width: 100%;
-    border-radius: 5px;
-  }
+        h2 {
+            text-align: center;
+            font-family: $open;
+            font-size: 5em;
+            @include inset-type();
+        }
+
+        label {
+            font-size: 2em;
+            display: inline;
+            margin-top: 5px;
+            font-family: $open;
+            margin-right: 5px;
+            @include inset-type();
+        }
+
+        textarea {
+            border: none;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 5px;
+            font-family: $open;
+            display: block;
+        }
+
+        select {
+            outline: 0;
+            box-shadow: none;
+            border: 0;
+            background: red;
+            clear: both;
+            font-size: 1.5em;
+        }
+
+        button {
+            background: none;
+            outline: none;
+            position: absolute;
+            border-radius: 5px;
+            right: 20px;
+            bottom: 16px;
+            border: none;
+            font-size: 2em;
+            @include inset-type();
+            box-shadow: $box-shadow;
+
+            &:hover {
+                @include hover();
+            }
+        }
+    }
 }

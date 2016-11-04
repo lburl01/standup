@@ -1,5 +1,4 @@
 <div class="usersHomeContainer" ng-controller="UsersHomeController as user">
-
     <nav class="userHomeNav">
       <ul>
         <li> <%= image_tag("lightbulb.png", :alt => "Idea by Davo Sime from the Noun Project", :class => "navIcon") %></li>
@@ -9,20 +8,19 @@
     </nav>
 
     <form class="bulbForm" name="bulbForm">
+      <h2>Create a Bulb</h2>
+        <textarea class="brightBulb" name="brightBulb" ng-model="user.bulb.bright" placeholder="Share a bright bulb"></textarea>
 
-        <label for="brightBulb">Bright Bulb:</label>
-        <textarea class="brightBulb" name="brightBulb" placeholder="Share a bright bulb"></textarea>
+        <textarea class="dimBulb" name="dimBulb" ng-model="user.bulb.dim" placeholder="Share a dim bulb"></textarea>
 
-        <label for="dimBulb">Dim Bulb:</label>
-        <textarea class="dimBulb" name="dimBulb" placeholder="Share a dim bulb"></textarea>
-
-        <label for="blocker">Blocker:</label>
-        <textarea class="blocker" name="blocker" placeholder="What's been blocking you lately?"></textarea>
+        <textarea class="blocker" name="blocker" ng-model="user.bulb.blocked" placeholder="What's been blocking you lately?"></textarea>
 
         <label for="panicScore">Panic Score:</label>
-        <select class="panicScore" name="panicScore">
+
+        <select class="panicScore" name="panicScore" ng-model="panicScore" ng-change="user.getPanicScore(panicScore)">
             <option ng-repeat="score in user.score" value="{{score}}">{{score}}</option>
         </select>
-        <button type="button" name="submitBulb">Post</button>
+
+        <button type="button" name="submitBulb" ng-click="user.createBulb(bulbForm.brightBulb.$viewValue, bulbForm.dimBulb.$viewValue, bulbForm.blocker.$viewValue, user.score)">Post</button>
     </form>
 </div>

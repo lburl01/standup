@@ -1,6 +1,6 @@
 .userHomeNav {
     width: 100vw;
-    background: rgba(#232323, .5);
+    background: $black;
     overflow: hidden;
 
     ul {
@@ -8,12 +8,14 @@
             .navIcon {
                 width: 50px;
                 z-index: 5;
+                @include inset-type();
+
             }
             margin: 10px 0 10px 40px;
             float: left;
-            color: white;
-            font-family: $amatica;
+            font-family: $open;
             font-size: 3em;
+            @include inset-type();
 
             &:hover {
               @include hover();

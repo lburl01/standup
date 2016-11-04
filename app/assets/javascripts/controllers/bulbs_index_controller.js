@@ -3,9 +3,13 @@ angular.module('standupApp').controller('BulbsIndexController', function($http, 
 var self = this;
 
 var currentBulb = getBulbsService.get();
-currentBulb.then(function(response) {
-  console.log(response);
-  self.allBulbs = response;
-});
 
+this.loadBulbs = function() {
+  currentBulb.then(function(response) {
+    console.log(response);
+    self.allBulbs = response;
+  });
+};
+
+this.loadBulbs();
 });

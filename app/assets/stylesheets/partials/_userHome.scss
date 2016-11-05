@@ -1,40 +1,41 @@
 .usersHomeContainer {
     width: 100vw;
-    height: 100vh;
+    height: 300vh;
     background: $background;
 
     .bulbForm {
         width: 55%;
-        margin: 60px auto;
+        margin: 60px auto 20px;
         border-radius: 5px;
         padding: 20px;
-        background: $gradient;
+        background: white;
         position: relative;
         clear: both;
 
         h2 {
             text-align: center;
-            font-family: $open;
-            font-size: 5em;
-            @include inset-type();
+            font-family: $amatica;
+            font-size: 3em;
+            letter-spacing: 4px;
         }
 
         label {
-            font-size: 2em;
+            font-size: 1.5em;
             display: inline;
             margin-top: 5px;
-            font-family: $open;
+            font-family: $amatica;
+            letter-spacing: 3px;
             margin-right: 5px;
-            @include inset-type();
         }
 
         textarea {
-            border: none;
+            border: 1px solid $innerBorderColor;
             margin: 10px 0;
             width: 100%;
             border-radius: 5px;
             font-family: $open;
             display: block;
+            padding: 5px;
         }
 
         select {
@@ -43,7 +44,7 @@
             border: 0;
             background: red;
             clear: both;
-            font-size: 1.5em;
+            font-size: 1em;
         }
 
         button {
@@ -54,13 +55,72 @@
             right: 20px;
             bottom: 16px;
             border: none;
-            font-size: 2em;
-            @include inset-type();
+            font-size: 1.5em;
+            background: $black;
+            color: white;
+            font-family: $amatica;
+            letter-spacing: 3px;
+            box-shadow: $box-shadow;
+            width: 80px;
+
+            &:hover {
+                @include hover();
+            }
+        }
+    }
+
+    .btnContainer {
+        width: 55%;
+        margin: 0 auto;
+
+        button {
+            padding: 0 10px;
+            margin-right: 20px;
+            background: none;
+            outline: none;
+            border-radius: 5px;
+            border: none;
+            font-size: 1.5em;
+            background: $black;
+            color: white;
+            font-family: $amatica;
+            letter-spacing: 3px;
             box-shadow: $box-shadow;
 
             &:hover {
                 @include hover();
             }
         }
+    }
+
+    .statsContainer {
+        position: absolute;
+        top: 100vh;
+        width: 100vw;
+        height: 100vh;
+        background: yellow;
+
+        // .backToTopBtn {
+        //     @include center();
+        //     bottom: -10vh;
+        //     border-radius: 5px;
+        //     padding: 10px;
+        //     font-family: $amatica;
+        //     cursor: pointer;
+        //     font-size: 1.5em;
+        //     box-shadow: $box-shadow;
+        //
+        //     &:hover {
+        //         @include hover();
+        //     }
+        // }
+    }
+
+    .histContainer {
+        position: absolute;
+        top: 200vh;
+        width: 100vw;
+        height: 100vh;
+        background: blue;
     }
 }

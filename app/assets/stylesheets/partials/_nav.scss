@@ -23,12 +23,18 @@
         li {
             margin: 10px 40px 10px 10px;
             float: left;
-            font-family: $open;
+            font-family: $amatica;
             font-size: 2em;
-            @include inset-type();
+            color: white;
+            letter-spacing: 5px;
+            a {
+              text-decoration: none;
+              color: white;
 
-            &:hover {
-                @include hover();
+              &:hover {
+                  @include hover();
+              }
+
             }
         }
     }

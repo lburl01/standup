@@ -5,9 +5,8 @@
       </div>
       <ul>
         <!-- <li> <%= image_tag("lightbulb.png", :alt => "Idea by Davo Sime from the Noun Project", :class => "navIcon") %></li> -->
-        <li>Home</li>
-        <li>Create</li>
-        <li>Bulbs</li>
+        <li><%= link_to "Home", users_home_path %></li>
+        <li><%= link_to "All Bulbs", bulbs_index_path%></li>
       </ul>
     </nav>
 
@@ -27,4 +26,23 @@
 
         <button type="button" name="submitBulb" ng-click="user.createBulb(bulbForm.brightBulb.$viewValue, bulbForm.dimBulb.$viewValue, bulbForm.blocker.$viewValue, user.score)">Post</button>
     </form>
+
+    <div class="btnContainer">
+      <button class="statsBtn" type="button" ng-click="user.scrollStats()">Statistics</button>
+      <button class="historyBtn" type="button" ng-click="user.scrollHist()">History</button>
+    </div>
+
+    <div class="statsContainer">
+      <h1>Statistics</h1>
+      <div class="statsToTopBtn" ng-click="user.scrollTop()">
+      </div>
+    </div>
+
+    <div class="histContainer">
+      <h1>History</h1>
+      <div class="histToTopBtn" ng-click="user.scrollTop()">
+      </div>
+
+    </div>
+
 </div>

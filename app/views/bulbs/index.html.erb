@@ -10,60 +10,44 @@
   </ul>
 </nav>
 
-<!-- <div class="bulbCard" ng-repeat="bulb in timeline.allBulbs">
-  <li>Bright Bulb:{{bulb.bright}}</li>
-  <li>Dim Bulb:{{bulb.dim}}</li>
-  <li>Blocker:{{bulb.blocked}}</li>
-  <li>Panic Score: {{bulb.panic_score}}</li> -->
-  <!-- <ul ng-repeat="comment in timeline.bulbs.comment_data">
-    <li>Comments:{{comment}}</li>
-  </ul> -->
-<!-- </div> -->
 
 <div class="bulbCard" ng-repeat="bulb in timeline.allBulbs">
   <ul class="bulbList">
     <li>
-      <p>
-        Author: {{bulb.bulb_writer}}
-      </p>
+      <p>{{bulb.bulb_writer}}</p>
     </li>
     <li>
-      <p>
-        Likes: {{bulb.likes}}
-      </p>
+      <p class='likes' ng-hide="bulb.show" ng-model="bulb.likes">Likes: {{bulb.likes}}</p>
+      <p class='likes' ng-show="bulb.show">Likes: {{timeline.newLike}}</p>
+
+      <button type="button" name="likeBtn" class="likeBtn" ng-click="timeline.incrementLikes(bulb, bulb.likes, bulb.bulb_id)">Like</button>
     </li>
     <li>
       <%= image_tag("brightbulb.png", :alt => "lamp by Elves Sousa from the Noun Project", :class => "bulbIcon") %>
-      <p>
-        Bright Bulb: {{bulb.bright}}
-      </p>
+      <p> {{bulb.bright}}</p>
     </li>
     <li>
       <%= image_tag("dimbulb.png", :alt => "lamp by Elves Sousa from the Noun Project", :class => "bulbIcon") %>
-      <p>
-        Dim Bulb: {{bulb.dim}}
-      </p>
+      <p> {{bulb.dim}}</p>
     </li>
     <li>
       <%= image_tag("blocker.png", :alt => "wall by TDL-LONDON from the Noun Project", :class => "bulbIcon") %>
-      <p>
-        Blocker: {{bulb.blocked}}
-      </p>
+      <p> {{bulb.blocked}}</p>
     </li>
     <li>
       <%= image_tag("panic.png", :alt => "Head by Eliricon from the Noun Project", :class => "bulbIcon") %>
-      <p>
-        Panic Score: {{bulb.panic_score}}
-      </p>
+      <p>Panic Score: {{bulb.panic_score}}</p>
     </li>
-    <ul class=commentList>Comments
+    <ul class=commentList ng-repeat="comment in bulb.comment_data">
       <li>
-        <p>
-          Comments 1
-        </p>
+        <p>{{comment.comment}}</p>
       </li>
     </ul>
   </ul>
+  <form class="addComment" name="commentForm">
+    <input type="text" name="commentInput" ng-model=bulb.commentText>
+    <button type="button" ng-click="timeline.addComment(bulb.commentText, bulb.bulb_id)">Comment</button>
+  </form>
 </div>
 
 </div>

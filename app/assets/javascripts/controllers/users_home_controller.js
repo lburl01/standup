@@ -24,4 +24,23 @@ angular.module('standupApp').controller('UsersHomeController', function() {
           }
         });
     };
+
+    this.scrollStats = function() {
+        $('html, body').animate({
+            scrollTop: $(".statsContainer").offset().top
+        }, 500);
+    };
+
+    this.scrollHist = function() {
+        $('html, body').animate({
+            scrollTop: $(".histContainer").offset().top
+        }, 500);
+    };
+
+    this.scrollTop = function() {
+        $("html, body").animate({
+            scrollTop: 0
+        }, "slow");
+        return false;
+    };
 });

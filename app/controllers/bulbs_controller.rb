@@ -5,7 +5,9 @@ class BulbsController < ApplicationController
   def index
     data = []
 
-    Bulb.all.each do |bulbs|
+    @all_bulbs = Bulb.all.where(is_deleted: false)
+
+    @all_bulbs.each do |bulbs|
       bulb_id = bulbs.id
       bulb_owner = bulbs.user.name
       bulb_created = bulbs.created_at

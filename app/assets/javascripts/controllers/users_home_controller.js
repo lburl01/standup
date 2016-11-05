@@ -1,4 +1,4 @@
-angular.module('standupApp').controller('UsersHomeController', function() {
+angular.module('standupApp').controller('UsersHomeController', ["getBulbsService", function(getBulbsService) {
     this.message = 'in UsersHomeController';
 
     this.score = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -43,4 +43,17 @@ angular.module('standupApp').controller('UsersHomeController', function() {
         }, "slow");
         return false;
     };
-});
+
+    var self = this;
+
+    var history = getBulbsService.getHist();
+
+    self.getHistory = function() {
+      history.then(function(response) {
+        console.log(response);
+      });
+    };
+
+    self.getHistory();
+    // to get history 'get users/home'
+}]);

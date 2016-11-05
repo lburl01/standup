@@ -7,8 +7,18 @@ angular.module('standupApp').service('getBulbsService', function($http) {
         return response.data;
       });
   }
+
+  function getHistory() {
+    return $http({
+      method: "GET",
+      url: "/users/home.json"
+    }).then(function(response) {
+      return response.data;
+    });
+  }
   return {
-    get: getBulbs
+    get: getBulbs,
+    getHist: getHistory
   };
 
 });

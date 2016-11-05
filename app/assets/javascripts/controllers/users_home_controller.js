@@ -1,4 +1,5 @@
 angular.module('standupApp').controller('UsersHomeController', ["getBulbsService", function(getBulbsService) {
+
     this.message = 'in UsersHomeController';
 
     this.score = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -51,7 +52,20 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
     self.getHistory = function() {
       history.then(function(response) {
         console.log(response);
+        self.bulbHist = response;
+        self.parseTime(self.bulbHist);
       });
+    };
+
+    self.allTimes = [];
+
+    self.parseTime = function(response) {
+      response.forEach(function(item) {
+        self.bulb.time = item.created_at;
+        self.allTimes.push(self.bulb.time);
+        // console.log(strftime(self.bulb.time));
+      });
+      // console.log(self.allTimes);
     };
 
     self.getHistory();

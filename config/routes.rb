@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   get 'bulbs/index'
   post 'bulbs/index' => 'bulbs#comment'
-  patch 'bulbs/index/:id' => 'bulbs#increment'
+  patch 'bulbs/index' => 'bulbs#increment'
 
   get 'bulbs/create'
 

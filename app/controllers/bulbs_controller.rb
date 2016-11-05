@@ -48,7 +48,7 @@ class BulbsController < ApplicationController
   end
 
   def increment
-    bulb = Bulb.find(params[:id])
+    bulb = Bulb.find(id: params['bulb_id'])
     bulb.increment!(:likes)
   end
 

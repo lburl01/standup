@@ -14,12 +14,12 @@ Rails.application.routes.draw do
 
   get 'users/home'
   post 'users/home' => 'bulbs#create'
-  patch 'users/home' => 'bulbs#increment'
 
   get 'users/create'
 
   get 'bulbs/index'
   post 'bulbs/index' => 'bulbs#comment'
+  patch 'bulbs/index/:id' => 'bulbs#increment'
 
   get 'bulbs/create'
 

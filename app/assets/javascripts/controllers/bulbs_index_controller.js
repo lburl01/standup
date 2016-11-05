@@ -27,7 +27,6 @@ angular.module('standupApp').controller('BulbsIndexController', ["$http", "getBu
           type: 'POST',
           url: 'index.json',
           data: comment,
-          // dataType: "json",
           success: function() {
               console.log('success!');
           }
@@ -37,6 +36,17 @@ angular.module('standupApp').controller('BulbsIndexController', ["$http", "getBu
     self.incrementLikes = function(bulb, likes, bulbId) {
       self.newLike = likes+1;
       bulb.show = true;
+
+      console.log(bulb);
+
+      $.ajax({
+        type: 'PATCH',
+        url: "index/" + bulbId,
+        data: bulbId,
+        success: function() {
+          console.log('success!');
+        }
+      });
     };
 
     this.loadBulbs();

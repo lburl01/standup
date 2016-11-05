@@ -1,36 +1,44 @@
 angular.module('standupApp').controller('BulbsIndexController', ["$http", "getBulbsService", function($http, getBulbsService) {
 
-var self = this;
+    var self = this;
 
-var currentBulb = getBulbsService.get();
+    var currentBulb = getBulbsService.get();
 
-this.loadBulbs = function() {
-  currentBulb.then(function(response) {
-    console.log(response);
-    self.allBulbs = response;
-  });
-};
+    this.loadBulbs = function() {
+        currentBulb.then(function(response) {
+            console.log(response);
+            self.allBulbs = response;
+        });
+    };
 
-self.comment = {
-  comment: '',
-  bulb_id: ''
-};
+    self.comment = {
+        comment: '',
+        bulb_id: ''
+    };
 
-self.addComment = function(comment, bulbId) {
-  self.comment.comment = comment;
-  self.comment.bulb_id = bulbId;
-  // console.log(self.comment);
+    self.addComment = function(comment, bulbId) {
+        self.comment.comment = comment;
+        self.comment.bulb_id = bulbId;
+        console.log(self.comment);
 
-  $.ajax({
-  type: 'POST',
-  url: 'bulbs/index',
-  data: self.comment,
-  success: function() {
-    console.log('success!');
-  }
-});
+        // $.ajax({
+        //     type: 'POST',
+        //     url: 'index',
+        //     data: self.comment,
+        //     success: function() {
+        //         console.log('success!');
+        //     }
+        // });
 
-};
+    };
 
-this.loadBulbs();
+    self.likeAmount = 3;
+
+    self.incrementLikes = function(bulb, likes, bulbId) {
+      bulb.show = true;
+      // likes = likes+bulbId;
+      // console.log(likes + ' ' + bulbId);
+    };
+
+    this.loadBulbs();
 }]);

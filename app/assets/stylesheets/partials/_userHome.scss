@@ -86,31 +86,48 @@
         height: 100vh;
 
         h1 {
-          margin-top: 20px;
-          text-align: center;
-          font-size: 3em;
-          font-family: $cabinSketch;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 3em;
+            font-family: $cabinSketch;
         }
 
         hr {
-          width: 87%;
+            width: 87%;
         }
 
         .graphContainer {
-          ul {
-            width: 100%;
-            background: red;
+            margin: 0 auto;
+            width: 80%;
 
-            li {
-              float: left;
-              background: red;
-              height: 100px;
-            }
-          }
+
+                li {
+                    float: left;
+                    width: calc(70%/8);
+                    margin: 10px;
+                    background: lightblue;
+                    list-style: none;
+                    box-shadow: $box-shadow;
+                    font-family: $cabinSketch;
+                    text-align: center;
+                    color: white;
+                    padding: 5px;
+
+                    p {
+                      text-align: center;
+                      font-family: $open;
+                      margin-top: 10px;
+                      font-family: $cabinSketch;
+                      color: $black;
+                      font-size: 1.5em;
+                    }
+                }
+
         }
+
         .statsToTopBtn {
             @include center();
-            bottom: 0vh;
+            bottom: 0;
             @include button($black);
 
             &:hover {
@@ -126,14 +143,14 @@
         background: $background;
 
         h1 {
-          margin-top: 20px;
-          text-align: center;
-          font-size: 3em;
-          font-family: $cabinSketch;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 3em;
+            font-family: $cabinSketch;
         }
 
         hr {
-          width: 87%;
+            width: 87%;
         }
 
         .histToTopBtn {

@@ -17,6 +17,6 @@ class User < ApplicationRecord
   end
 
   def self.bulbs_per_user
-    @users_bulbs = Bulb.select("bright, dim, blocked, likes, panic_score, created_at").where(user_id: @current_user).where("is_deleted = false").all
+    @users_bulbs = Bulb.select("bright, dim, blocked, likes, panic_score, created_at").where(user_id: current_user.id).where("is_deleted = false").all
   end
 end

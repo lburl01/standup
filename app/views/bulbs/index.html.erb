@@ -18,7 +18,7 @@
     </li>
     <li>
       <p class='likes' ng-hide="bulb.show" ng-model="bulb.likes">Likes: {{bulb.likes}}</p>
-      <p class='likes' ng-show="bulb.show">new!</p>
+      <p class='likes' ng-show="bulb.show">Likes: {{timeline.newLike}}</p>
 
       <button type="button" name="likeBtn" class="likeBtn" ng-click="timeline.incrementLikes(bulb, bulb.likes, bulb.bulb_id)">Like</button>
     </li>

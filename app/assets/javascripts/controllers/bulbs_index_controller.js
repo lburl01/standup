@@ -32,12 +32,9 @@ angular.module('standupApp').controller('BulbsIndexController', ["$http", "getBu
 
     };
 
-    self.likeAmount = 3;
-
     self.incrementLikes = function(bulb, likes, bulbId) {
+      self.newLike = likes+1;
       bulb.show = true;
-      // likes = likes+bulbId;
-      // console.log(likes + ' ' + bulbId);
     };
 
     this.loadBulbs();

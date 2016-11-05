@@ -16,7 +16,7 @@ class BulbsController < ApplicationController
       blocked = bulbs.blocked
       likes = bulbs.likes
       panic_score = bulbs.panic_score
-      comments = bulbs.user.comments.where(bulb_id: bulbs.id)
+      comments = bulbs.comments.where(bulb_id: bulbs.id).all
 
       data << { "bulb_id" => bulb_id, "bulb_created" => bulb_created, "bulb_writer" => bulb_owner, "bright" => bright_bulb, "dim" => dim_bulb, "blocked" => blocked, "likes" => likes, "panic_score" => panic_score, "comment_data" => comments}
     end

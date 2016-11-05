@@ -6,7 +6,7 @@ angular.module('standupApp').controller('BulbsIndexController', ["$http", "getBu
 
     this.loadBulbs = function() {
         currentBulb.then(function(response) {
-            console.log(response);
+            // console.log(response);
             self.allBulbs = response;
         });
     };
@@ -37,7 +37,9 @@ angular.module('standupApp').controller('BulbsIndexController', ["$http", "getBu
       self.newLike = likes+1;
       bulb.show = true;
 
-      console.log(bulb);
+      // console.log(bulb);
+      // console.log(typeof bulbId + ' ' + bulbId);
+      console.log(typeof bulb.bulb_id);
 
       $.ajax({
         type: 'PATCH',

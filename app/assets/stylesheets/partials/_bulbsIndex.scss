@@ -39,15 +39,10 @@
           position: absolute;
           right: 30px;
           top: 55px;
-          border: none;
-          padding: 10px;
-          border-radius: 5px;
-          outline: none;
-          background: $black;
-          color: white;
-          font-family: $amatica;
-          font-size: 14px;
           letter-spacing: 3px;
+          @include button($black);
+          padding: 0 10px;
+          font-size: 1.5em;
 
           &:hover {
             @include hover();
@@ -68,15 +63,11 @@
         width: 75%;
       }
       button {
-        border: none;
-        border-radius: 5px;
-        outline: none;
+        @include button($black);
         width: 23%;
-        background: $black;
-        color: white;
-        font-family: $amatica;
-        font-size: 14px;
         letter-spacing: 3px;
+        padding: 2px 0;
+        font-size: 14px;
 
         &:hover {
           @include hover();

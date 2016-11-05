@@ -19,14 +19,15 @@ angular.module('standupApp').controller('BulbsIndexController', ["$http", "getBu
     self.addComment = function(comment, bulbId) {
         self.comment.comment = comment;
         self.comment.bulb_id = bulbId;
-        self.postComment(this.bulb);
+        self.postComment(self.comment);
     };
 
-    self.postComment = function(bulb) {
+    self.postComment = function(comment) {
       $.ajax({
           type: 'POST',
-          url: 'index',
-          data: bulb,
+          url: 'index.json',
+          data: comment,
+          // dataType: "json",
           success: function() {
               console.log('success!');
           }

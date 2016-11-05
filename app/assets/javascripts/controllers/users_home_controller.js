@@ -53,18 +53,22 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
       history.then(function(response) {
         console.log(response);
         self.bulbHist = response;
-        // self.parseTime(self.bulbHist);
+        self.panicScore(self.bulbHist);
       });
     };
 
-    // self.allTimes = [];
-    //
-    // self.parseTime = function(response) {
-    //   response.forEach(function(item) {
-    //     self.bulb.time = item.created_at;
-    //     self.allTimes.push(self.bulb.time);
-    //   });
-    // };
+    self.panicScores = [];
+
+    self.panicScore = function(response) {
+      response.forEach(function(item) {
+        if(item.panic_score === null) {
+          item.panic_score = 0;
+        }
+        self.score = {score : item.panic_score};
+        self.panicScores.push(self.score);
+      });
+      console.log(self.panicScores);
+    };
 
     self.getHistory();
 }]);

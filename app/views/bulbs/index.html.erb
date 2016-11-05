@@ -36,15 +36,15 @@
       <%= image_tag("panic.png", :alt => "Head by Eliricon from the Noun Project", :class => "bulbIcon") %>
       <p>Panic Score: {{bulb.panic_score}}</p>
     </li>
-    <ul class=commentList ng-repeat="comment in bulb.comment_data">Comments
+    <ul class=commentList ng-repeat="comment in bulb.comment_data">
       <li>
         <p>{{comment.comment}}</p>
       </li>
     </ul>
   </ul>
-  <form class="addComment" name="commentForm" action="index.html" method="post">
-    <input type="text" name="commentInput" value="" ng-model=timeline.comment>
-    <button type="button" name="">Comment</button>
+  <form class="addComment" name="commentForm">
+    <input type="text" name="commentInput" ng-model=bulb.commentText>
+    <button type="button" ng-click="timeline.addComment(bulb.commentText, bulb.bulb_id)">Comment</button>
   </form>
 </div>
 

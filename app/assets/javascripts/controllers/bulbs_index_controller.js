@@ -41,7 +41,7 @@ angular.module('standupApp').controller('BulbsIndexController', ["$http", "getBu
 
       $.ajax({
         type: 'PATCH',
-        url: "index",
+        url: "increment/" + bulbId,
         data: bulbId,
         success: function() {
           console.log('success!');

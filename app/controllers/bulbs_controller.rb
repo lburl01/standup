@@ -3,6 +3,7 @@ class BulbsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
+
     data = []
 
     @all_bulbs = Bulb.all.where(is_deleted: false)
@@ -47,9 +48,10 @@ class BulbsController < ApplicationController
     end
   end
 
-  def increment
-    bulb = Bulb.find(params['bulb_id'])
+  def increment_likes
+    bulb = Bulb.find(params['id'])
     bulb.increment!(:likes)
+    status 200
   end
 
   def comment
@@ -66,5 +68,11 @@ class BulbsController < ApplicationController
         format.json { render json: @comment.errors.full_messages, status: :unprocessable_entity }
       end
     end
+  end
+
+  private
+
+  def bulb_params
+    params.require(:bulb).permit(:id, :bright, :dim, :blocked, :likes, :panic_score)
   end
 end

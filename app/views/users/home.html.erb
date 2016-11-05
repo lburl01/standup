@@ -40,7 +40,7 @@
     <div class="histContainer">
       <h1>History</h1><hr>
 
-      <div class="bulbCard" ng-repeat="bulb in user.bulbHist">
+      <div class="bulbCard" ng-repeat="bulb in user.bulbHist | orderBy: '-'">
         <ul class="bulbList">
           <li>
             <p>{{bulb.created_at}}</p>

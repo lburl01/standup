@@ -96,6 +96,18 @@
           width: 87%;
         }
 
+        .graphContainer {
+          ul {
+            width: 100%;
+            background: red;
+
+            li {
+              float: left;
+              background: red;
+              height: 100px;
+            }
+          }
+        }
         .statsToTopBtn {
             @include center();
             bottom: 0vh;

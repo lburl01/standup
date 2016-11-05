@@ -19,17 +19,18 @@ angular.module('standupApp').controller('BulbsIndexController', ["$http", "getBu
     self.addComment = function(comment, bulbId) {
         self.comment.comment = comment;
         self.comment.bulb_id = bulbId;
-        console.log(self.comment);
+        self.postComment(this.bulb);
+    };
 
-        // $.ajax({
-        //     type: 'POST',
-        //     url: 'index',
-        //     data: self.comment,
-        //     success: function() {
-        //         console.log('success!');
-        //     }
-        // });
-
+    self.postComment = function(bulb) {
+      $.ajax({
+          type: 'POST',
+          url: 'index',
+          data: bulb,
+          success: function() {
+              console.log('success!');
+          }
+      });
     };
 
     self.incrementLikes = function(bulb, likes, bulbId) {

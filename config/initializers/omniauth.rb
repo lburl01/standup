@@ -1,7 +1,7 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"], {
-    redirect_uri:"http://localhost:3001/auth/google_oauth2/callback",
+    redirect_uri:"https://virtual-standup.herokuapp.com/auth/google_oauth2/callback",
     prompt: "consent",
-    scope: "email, profile", Google::Apis::CalendarV3::AUTH_CALENDAR
+    scope: 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile'
   }
 end

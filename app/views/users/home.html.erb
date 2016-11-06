@@ -21,7 +21,7 @@
         <label for="panicScore">Panic Score:</label>
 
         <select class="panicScore" name="panicScore" ng-model="panicScore" ng-change="user.getPanicScore(panicScore)">
-            <option ng-repeat="score in user.score" value="{{score}}">{{score}}</option>
+            <option ng-repeat="score in user.scores" value="{{score}}">{{score}}</option>
         </select>
 
         <button type="button" name="submitBulb" ng-click="user.createBulb(bulbForm.brightBulb.$viewValue, bulbForm.dimBulb.$viewValue, bulbForm.blocker.$viewValue, user.score)">Post</button>

@@ -2,7 +2,7 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
 
     this.message = 'in UsersHomeController';
 
-    this.score = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    this.scores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     this.bulb = {
         bright: '',
@@ -68,8 +68,6 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
 
             var shortenedTime = timeString.slice(5, 10);
 
-            console.log(shortenedTime);
-
             self.score = {
                 score: item.panic_score,
                 time: shortenedTime
@@ -79,24 +77,45 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
         });
 
         self.buildGraph(self.panicScores);
-        console.log(self.panicScores);
 
     };
 
     self.buildGraph = function(scores) {
         for (count = 0; count < scores.length; count++) {
-            var width = 0.7 / scores.length * 100 + '%';
+            var width = 0.65 / scores.length * 100 + '%';
             var height = scores[count].score * 40 + 'px';
             var left = 20;
+
+            if (scores[count].score === 0) {
+              self.background = 'none';
+            } else if (scores[count].score === 1) {
+              self.background = "#EBF5FB";
+            } else if (scores[count].score === 2) {
+              self.background = '#D6EAF8';
+            } else if (scores[count].score === 3) {
+              self.background = '#AED6F1';
+            } else if (scores[count].score === 4) {
+              self.background = '#85C1E9';
+            } else if (scores[count].score === 5) {
+              self.background = '#5DADE2';
+            } else if (scores[count].score === 6) {
+              self.background = '#3498DB';
+            } else if (scores[count].score === 7) {
+              self.background = '#2E86C1';
+            } else if (scores[count].score === 8) {
+              self.background = '#2874A6';
+            } else if (scores[count].score === 9) {
+              self.background = '#21618C';
+            } else if (scores[count].score === 10) {
+              self.background = '#1B4F72';
+            }
+
             var bar = $('<li>').attr('class', 'bar').css({
                 "height": height,
-                "width": width
+                "width": width,
+                "background": self.background
             }).text(scores[count].time).appendTo('.graphContainer').append('<p>'+ scores[count].score + '</p>');
         }
-        // $('.bar').each(function(index) {
-        //   console.log(index);
-        // });
-
     };
 
 

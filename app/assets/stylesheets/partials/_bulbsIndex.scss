@@ -52,8 +52,10 @@
     .commentList {
       margin-top: 10px;
       li {
-        background: lightblue;
         border-radius: 5px;
+        font-style: italic;
+        color: rgba(black, .5);
+        background: $innerBorderColor;
       }
     }
 

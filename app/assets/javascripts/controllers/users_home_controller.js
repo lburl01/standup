@@ -83,31 +83,31 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
     self.buildGraph = function(scores) {
         for (count = 0; count < scores.length; count++) {
             var width = 0.65 / scores.length * 100 + '%';
-            var height = scores[count].score * 40 + 'px';
+            var height = scores[count].score * 30 + 'px';
             var left = 20;
 
             if (scores[count].score === 0) {
               self.background = 'none';
             } else if (scores[count].score === 1) {
-              self.background = "#EBF5FB";
+              self.background = "#FDEDEC";
             } else if (scores[count].score === 2) {
-              self.background = '#D6EAF8';
+              self.background = '#FADBD8';
             } else if (scores[count].score === 3) {
-              self.background = '#AED6F1';
+              self.background = '#F5B7B1';
             } else if (scores[count].score === 4) {
-              self.background = '#85C1E9';
+              self.background = '#F1948A';
             } else if (scores[count].score === 5) {
-              self.background = '#5DADE2';
+              self.background = '#EC7063';
             } else if (scores[count].score === 6) {
-              self.background = '#3498DB';
+              self.background = '#E74C3C';
             } else if (scores[count].score === 7) {
-              self.background = '#2E86C1';
+              self.background = '#CB4335';
             } else if (scores[count].score === 8) {
-              self.background = '#2874A6';
+              self.background = '#B03A2E';
             } else if (scores[count].score === 9) {
-              self.background = '#21618C';
+              self.background = '#943126';
             } else if (scores[count].score === 10) {
-              self.background = '#1B4F72';
+              self.background = '#78281F';
             }
 
             var bar = $('<li>').attr('class', 'bar').css({

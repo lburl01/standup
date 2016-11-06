@@ -28,25 +28,22 @@ angular.module('standupApp').controller('BulbsIndexController', ["$http", "getBu
           url: 'index.json',
           data: comment,
           success: function() {
-              console.log('success!');
+            // do something?
           }
       });
+      location.reload();
     };
 
     self.incrementLikes = function(bulb, likes, bulbId) {
       self.newLike = likes+1;
       bulb.show = true;
 
-      // console.log(bulb);
-      // console.log(typeof bulbId + ' ' + bulbId);
-      console.log(typeof bulb.bulb_id);
-
       $.ajax({
         type: 'PATCH',
         url: "increment/" + bulbId,
         data: bulbId,
         success: function() {
-          console.log('success!');
+          //do something?
         }
       });
     };

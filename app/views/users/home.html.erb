@@ -1,10 +1,11 @@
 <div class="usersHomeContainer" ng-controller="UsersHomeController as user">
     <nav class="userHomeNav">
       <div class="title">
+        <div class="yellow">
+        </div>
         StandUp<%= image_tag("lightbulb.png", :alt => "Idea by Davo Sime from the Noun Project", :class => "navIcon") %>
       </div>
       <ul>
-        <!-- <li> <%= image_tag("lightbulb.png", :alt => "Idea by Davo Sime from the Noun Project", :class => "navIcon") %></li> -->
         <li><%= link_to "Home", users_home_path %></li>
         <li><%= link_to "All Bulbs", bulbs_index_path%></li>
       </ul>
@@ -44,6 +45,7 @@
 
     <div class="histContainer">
       <h1>History</h1><hr>
+      <h2>This is where all your bulbs live, ordered reverse-chronologically (newest on top).</h2>
 
       <div class="bulbCard" ng-repeat="bulb in user.bulbHist | orderBy: '-'">
         <ul class="bulbList">

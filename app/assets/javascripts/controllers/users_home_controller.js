@@ -24,6 +24,7 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
                 // do something?
             }
         });
+        window.location.href = "/bulbs/index";
     };
 
     this.scrollStats = function() {

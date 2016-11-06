@@ -18,7 +18,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'pry-rails'
-gem 'google-api-client', '0.8.2', require: 'google/api_client'
+gem 'google-api-client', '~> 0.9', :require => 'google/apis/calendar_v3'
 gem "omniauth-google-oauth2", :git => 'https://github.com/zquestz/omniauth-google-oauth2', :branch => 'master'
 gem "figaro"
 # Use Capistrano for deployment

@@ -1,3 +1,5 @@
+# http://landonmarder.com/posts/2014/06/04/google-cal-rails/
+
 class User < ApplicationRecord
   validates :name, :email, presence: true
 
@@ -12,11 +14,9 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.refresh_token = auth.credentials.refresh_token
       user.save!
     end
   end
 
-  # def self.bulbs_per_user
-  #   @users_bulbs = Bulb.select("bright, dim, blocked, likes, panic_score, created_at").where(user_id: @current_user.id).where("is_deleted = false").all
-  # end
 end

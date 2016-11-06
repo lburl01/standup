@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', :to => 'users#failure'
 
+  get 'schedules/index' => 'schedules#get_10_events'
+
   root to: 'pages#index'
 
 end

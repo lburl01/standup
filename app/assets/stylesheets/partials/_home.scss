@@ -24,6 +24,11 @@
         font-size: 1em;
         color: black;
         text-align: center;
+
+        @include media(483px) {
+          width: 300px;
+        }
+
     }
 
     .homeVideo {
@@ -47,6 +52,36 @@
         border-radius: 5px;
         padding: 10px;
 
+        @include media(610px) {
+          left: 46%;
+          transform: translateX(-45%);
+        }
+
+        @include media(565px) {
+          left: 43%;
+          transform: translateX(-38%);
+        }
+
+        @include media(533px) {
+          left: 40%;
+        }
+
+        @include media(506px) {
+          left: 37%;
+        }
+
+        @include media(483px) {
+          left: 50%;
+        }
+
+        @include media(450px) {
+          left: 49%;
+        }
+
+        @include media(450px) {
+          left: 46%;
+        }
+
         li {
             border-radius: 5px;
             padding: 10px;
@@ -58,6 +93,23 @@
             cursor: pointer;
             font-size: 2em;
             box-shadow: $box-shadow;
+
+            @include media(695px) {
+              margin-right: 0;
+            }
+
+            @include media(483px) {
+              margin-bottom: 15px;
+            }
+
+            a {
+              text-decoration: none;
+              color: black;
+
+              &:hover {
+                @include hover();
+              }
+            }
 
             &:hover {
                   padding: 10px;
@@ -81,6 +133,17 @@
       &:hover {
         @include hover();
       }
+
+      @include media(1088px) {
+        bottom: -14vh;
+        background: $black;
+        color: white;
+      }
+
+      @include media(995px) {
+        bottom: -10vh;
+      }
+
 
     }
 }

@@ -48,5 +48,10 @@ angular.module('standupApp').controller('BulbsIndexController', ["$http", "getBu
       });
     };
 
+    self.toggleLightSwitch = function() {
+      self.on = !self.on;
+      $('.bulbsContainer').toggleClass('off');
+      $('.yellow').toggleClass('yellowOff');
+    };
     this.loadBulbs();
 }]);

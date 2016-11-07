@@ -3,6 +3,10 @@
     background: $background;
 }
 
+.off {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), image-url('paperBackground.png');
+}
+
 .bulbCard {
     margin: 20px auto;
     font-size: 14px;

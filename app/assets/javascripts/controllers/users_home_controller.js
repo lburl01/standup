@@ -119,12 +119,5 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
         }
     };
 
-
-
-
-
-
-
-
     self.getHistory();
 }]);

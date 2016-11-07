@@ -24,6 +24,7 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
                 // do something?
             }
         });
+        window.location.href = "/bulbs/index";
     };
 
     this.scrollStats = function() {
@@ -118,12 +119,12 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
         }
     };
 
-
-
-
-
-
-
+    self.toggleLightSwitch = function() {
+      self.on = !self.on;
+      $('.yellow').toggleClass('yellowOff');
+      $('.usersHomeContainer').toggleClass('off');
+      $('.lamp').toggleClass('illuminate');
+    };
 
     self.getHistory();
 }]);

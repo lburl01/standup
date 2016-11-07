@@ -6,6 +6,7 @@
     .navIcon {
         width: 30px;
         z-index: 5;
+        position: absolute;
         @include inset-type();
     }
 
@@ -15,15 +16,29 @@
         font-size: 2em;
         margin: 10px 0 10px 40px;
         color: white;
+
+        .yellow {
+            width: 15px;
+            height: 15px;
+            background: yellow;
+            position: absolute;
+            top: 15px;
+            left: 169px;
+            z-index: 1;
+        }
+
+        .yellowOff {
+          background: none;
+        }
     }
 
     ul {
         float: right;
-
         @include media(522px) {
-          float: left;
-          margin-left: 30px;
+            float: left;
+            margin-left: 30px;
         }
+
         li {
             margin: 10px 40px 10px 10px;
             float: left;
@@ -31,15 +46,36 @@
             font-size: 2em;
             color: white;
             letter-spacing: 5px;
+
             a {
-              text-decoration: none;
-              color: white;
+                text-decoration: none;
+                color: white;
 
-              &:hover {
-                  @include hover();
-              }
-
+                &:hover {
+                    @include hover();
+                }
             }
+        }
+    }
+}
+
+.switchContainer {
+    display: inline;
+
+    .switch {
+        width: 40px;
+        position: absolute;
+        top: 62px;
+        left: 10px;
+        border-radius: 4px;
+        transition: all 1s ease;
+        cursor: pointer;
+
+
+        @include media(520px) {
+          width: 35px;
+          top: 114px;
+          left: 10px;
         }
     }
 }

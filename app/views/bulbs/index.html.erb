@@ -2,6 +2,8 @@
 
 <nav class="userHomeNav">
   <div class="title">
+    <div class="yellow">
+    </div>
     StandUp<%= image_tag("lightbulb.png", :alt => "Idea by Davo Sime from the Noun Project", :class => "navIcon") %>
   </div>
   <ul>
@@ -10,6 +12,14 @@
   </ul>
 </nav>
 
+<div class="switchContainer" ng-click="timeline.toggleLightSwitch()">
+  <div class="on" ng-show="timeline.on">
+    <%= image_tag("switchOff.png", :alt => "switch by Felix Westphal from the Noun Project", :class => "switch") %>
+  </div>
+  <div class="off" ng-hide="timeline.on">
+    <%= image_tag("switchOn.png", :alt => "switch by Felix Westphal from the Noun Project", :class => "switch on") %>
+  </div>
+</div>
 
 <div class="bulbCard" ng-repeat="bulb in timeline.allBulbs">
   <ul class="bulbList">

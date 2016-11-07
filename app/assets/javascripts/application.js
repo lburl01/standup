@@ -3,6 +3,5 @@
 //= require angular/angular.min.js
 //= require app.js
 //= require_tree ./services
-//= require_tree ./factories
 //= require_tree ./controllers
 //= require jquery

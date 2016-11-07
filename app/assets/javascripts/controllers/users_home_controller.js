@@ -123,7 +123,6 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
       self.on = !self.on;
       $('.yellow').toggleClass('yellowOff');
       $('.usersHomeContainer').toggleClass('off');
-      $('.lampLight').toggleClass('lampOn');
       $('.lamp').toggleClass('illuminate');
     };
 

@@ -28,7 +28,7 @@
             position: absolute;
             top: -49px;
             left: 300px;
-            transition: all 1s ease;
+            transition: all 2s ease;
             border-radius: 17%;
 
             @include media (500px) {
@@ -37,12 +37,12 @@
             @include media (447px) {
                 left: 245px;
             }
-
         }
 
         .illuminate {
           box-shadow: -70px 94px 300px 10px rgba(255,255,0,1);
           background: radial-gradient(ellipse at center, yellow 18%, rgba(258, 257, 255, 0) 73%);
+
         }
 
         .lampOn {
@@ -53,9 +53,6 @@
             background: yellow;
             top: -28px;
             left: 304px;
-            box-shadow: -9px 9px 137px 0px rgba(255,255,0,1);
-
-
 
             @include media (500px) {
                 left: 204px;
@@ -177,7 +174,6 @@
                 float: left;
                 width: calc(70%/8);
                 margin: 10px;
-                background: lightblue;
                 list-style: none;
                 box-shadow: $box-shadow;
                 font-family: $cabinSketch;

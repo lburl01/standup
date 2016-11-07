@@ -11,6 +11,7 @@ class UsersController < ApplicationController
         format.json { render json: @users_bulbs }
         format.html { render :home }
       end
+    end
   end
 
   def create

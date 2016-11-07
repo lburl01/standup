@@ -3,6 +3,10 @@
     height: 200vh;
     background: $background;
 
+    .off {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), image-url('paperBackground.png');
+    }
+
     .bulbForm {
         width: 55%;
         margin: 60px auto 20px;
@@ -12,24 +16,64 @@
         position: relative;
         clear: both;
         box-shadow: $box-shadow;
-
         @include media(700px) {
-          width: 75%;
+            width: 75%;
         }
-
         @include media(407px) {
-          margin: 20px auto 20px;
+            margin: 20px auto;
         }
 
+        .lamp {
+            width: 42px;
+            position: absolute;
+            top: -49px;
+            left: 300px;
+            transition: all 1s ease;
+            border-radius: 17%;
+
+            @include media (500px) {
+                left: 200px;
+            }
+            @include media (447px) {
+                left: 245px;
+            }
+
+        }
+
+        .illuminate {
+          box-shadow: -70px 94px 300px 10px rgba(255,255,0,1);
+          background: radial-gradient(ellipse at center, yellow 18%, rgba(258, 257, 255, 0) 73%);
+        }
+
+        .lampOn {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            background: yellow;
+            top: -28px;
+            left: 304px;
+            box-shadow: -9px 9px 137px 0px rgba(255,255,0,1);
+
+
+
+            @include media (500px) {
+                left: 204px;
+            }
+
+            @include media (447px) {
+                left: 249px;
+            }
+
+        }
 
         h2 {
             text-align: center;
             font-family: $amatica;
             font-size: 3em;
             letter-spacing: 4px;
-
             @include media(372px) {
-              font-size: 2.5em;
+                font-size: 2.5em;
             }
         }
 
@@ -40,9 +84,8 @@
             font-family: $amatica;
             letter-spacing: 3px;
             margin-right: 5px;
-
             @include media(415px) {
-              margin-right: -1px;
+                margin-right: -1px;
             }
         }
 
@@ -77,10 +120,9 @@
             &:hover {
                 @include hover();
             }
-
             @include media(407px) {
-              position: static;
-              margin-top: 5px;
+                position: static;
+                margin-top: 5px;
             }
         }
     }
@@ -98,11 +140,9 @@
             &:hover {
                 @include hover();
             }
-
             @include media(502px) {
-              margin-bottom: 10px;
+                margin-bottom: 10px;
             }
-
         }
     }
 
@@ -128,32 +168,32 @@
             width: 80%;
 
             h2 {
-              text-align:center;
-              font-family: $open;
-              margin: 20px;
+                text-align: center;
+                font-family: $open;
+                margin: 20px;
             }
-                li {
-                    float: left;
-                    width: calc(70%/8);
-                    margin: 10px;
-                    background: lightblue;
-                    list-style: none;
-                    box-shadow: $box-shadow;
-                    font-family: $cabinSketch;
+
+            li {
+                float: left;
+                width: calc(70%/8);
+                margin: 10px;
+                background: lightblue;
+                list-style: none;
+                box-shadow: $box-shadow;
+                font-family: $cabinSketch;
+                text-align: center;
+                color: white;
+                padding: 5px;
+
+                p {
                     text-align: center;
-                    color: white;
-                    padding: 5px;
-
-                    p {
-                      text-align: center;
-                      font-family: $open;
-                      margin-top: 10px;
-                      font-family: $cabinSketch;
-                      color: $black;
-                      font-size: 1.5em;
-                    }
+                    font-family: $open;
+                    margin-top: 10px;
+                    font-family: $cabinSketch;
+                    color: $black;
+                    font-size: 1.5em;
                 }
-
+            }
         }
 
         .statsToTopBtn {
@@ -181,9 +221,9 @@
         }
 
         h2 {
-          text-align:center;
-          font-family: $open;
-          margin: 20px;
+            text-align: center;
+            font-family: $open;
+            margin: 20px;
         }
 
         hr {

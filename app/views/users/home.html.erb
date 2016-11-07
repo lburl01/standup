@@ -11,7 +11,20 @@
       </ul>
     </nav>
 
+    <div class="switchContainer" ng-click="user.toggleLightSwitch()">
+      <div class="on" ng-show="user.on">
+        <%= image_tag("switchOff.png", :alt => "switch by Felix Westphal from the Noun Project", :class => "switch") %>
+      </div>
+      <div class="off" ng-hide="user.on">
+        <%= image_tag("switchOn.png", :alt => "switch by Felix Westphal from the Noun Project", :class => "switch on") %>
+      </div>
+    </div>
+
+
     <form class="bulbForm" name="bulbForm">
+      <div class="lampOn">
+      </div>
+      <%= image_tag("lamp.png", :alt => "lamp by Antonieta Gomez from the Noun Project", :class => "lamp") %>
       <h2>Create a Bulb</h2>
         <textarea class="brightBulb" name="brightBulb" ng-model="user.bulb.bright" placeholder="Share a bright bulb"></textarea>
 

@@ -119,5 +119,13 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
         }
     };
 
+    self.toggleLightSwitch = function() {
+      self.on = !self.on;
+      $('.yellow').toggleClass('yellowOff');
+      $('.usersHomeContainer').toggleClass('off');
+      $('.lampLight').toggleClass('lampOn');
+      $('.lamp').toggleClass('illuminate');
+    };
+
     self.getHistory();
 }]);

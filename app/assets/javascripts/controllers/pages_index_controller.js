@@ -1,5 +1,5 @@
 angular.module('standupApp').controller('PagesIndexController', function() {
-    this.message = 'in PagesIndexController';
+  
     this.scrollBottom = function() {
         $('html, body').animate({
             scrollTop: $(".aboutContainer").offset().top

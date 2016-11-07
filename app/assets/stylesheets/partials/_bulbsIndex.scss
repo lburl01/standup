@@ -4,7 +4,7 @@
 }
 
 .off {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), image-url('paperBackground.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), image-url('paperBackground.png');
 }
 
 .bulbCard {
@@ -18,13 +18,12 @@
     position: relative;
     clear: both;
     font-family: $open;
-
     @include media(700px) {
-      width: 75%;
+        width: 75%;
     }
 
     li {
-      padding: 10px;
+        padding: 10px;
 
         .bulbIcon {
             width: 20px;
@@ -33,65 +32,66 @@
         }
 
         p {
-          display: inline;
-          margin-left: 10px;
-          // float: left;
+            display: inline;
+            margin-left: 10px;
         }
 
         .likes {
-          position: absolute;
-          right: 30px;
-          top: 28px;
-
-          @include media(450px) {
-            left: 28px;
-            top: 53px;
-          }
+            position: absolute;
+            right: 30px;
+            top: 28px;
+            @include media(450px) {
+                left: 28px;
+                top: 53px;
+            }
         }
-        .likeBtn {
-          position: absolute;
-          right: 30px;
-          top: 55px;
-          letter-spacing: 3px;
-          @include button($black);
-          padding: 0 10px;
-          font-size: 1.5em;
 
-          &:hover {
-            @include hover();
-          }
+        .likeBtn {
+            position: absolute;
+            right: 30px;
+            top: 55px;
+            letter-spacing: 3px;
+            @include button($black);
+            padding: 0 10px;
+            font-size: 1.5em;
+
+            &:hover {
+                @include hover();
+            }
         }
     }
+
     .commentList {
-      margin-top: 10px;
-      li {
-        border-radius: 5px;
-        font-style: italic;
-        color: rgba(black, .5);
-        background: $innerBorderColor;
-      }
+        margin-top: 10px;
+
+        li {
+            border-radius: 5px;
+            font-style: italic;
+            color: rgba(black, .5);
+            background: $innerBorderColor;
+        }
     }
 
     .addComment {
-      padding: 10px;
-      input {
-        width: 75%;
-      }
-      button {
-        @include button($black);
-        width: 23%;
-        letter-spacing: 3px;
-        padding: 2px 0;
-        font-size: 14px;
+        padding: 10px;
 
-        &:hover {
-          @include hover();
+        input {
+            width: 75%;
         }
 
-        @include media(460px) {
-          letter-spacing: normal;
+        button {
+            @include button($black);
+            width: 23%;
+            letter-spacing: 3px;
+            padding: 2px 0;
+            font-size: 14px;
+
+            &:hover {
+                @include hover();
+            }
+            @include media(460px) {
+                letter-spacing: normal;
+            }
         }
-      }
     }
-
 }

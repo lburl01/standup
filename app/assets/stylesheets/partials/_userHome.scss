@@ -4,7 +4,7 @@
     background: $background;
 
     .off {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), image-url('paperBackground.png');
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), image-url('paperBackground.png');
     }
 
     .bulbForm {
@@ -30,7 +30,6 @@
             left: 300px;
             transition: all 2s ease;
             border-radius: 17%;
-
             @include media (500px) {
                 left: 200px;
             }
@@ -40,9 +39,8 @@
         }
 
         .illuminate {
-          box-shadow: -70px 94px 300px 10px rgba(255,255,0,1);
-          background: radial-gradient(ellipse at center, yellow 18%, rgba(258, 257, 255, 0) 73%);
-
+            box-shadow: -70px 94px 300px 10px rgba(255,255,0,1);
+            background: radial-gradient(ellipse at center, yellow 18%, rgba(258, 257, 255, 0) 73%);
         }
 
         .lampOn {
@@ -53,15 +51,12 @@
             background: yellow;
             top: -28px;
             left: 304px;
-
             @include media (500px) {
                 left: 204px;
             }
-
             @include media (447px) {
                 left: 249px;
             }
-
         }
 
         h2 {

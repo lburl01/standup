@@ -2,9 +2,8 @@
     position: absolute;
     top: 100vh;
     background: rgba(black, .3);
-
     @include media(437px) {
-      background: $black;
+        background: $black;
     }
 
     .aboutH2 {
@@ -22,11 +21,9 @@
         font-family: $open;
         color: white;
         line-height: 1.5;
-
         @include media(561px) {
-          width: 100%;
+            width: 100%;
         }
-
 
         h2 {
             font-family: $amatica;
@@ -44,70 +41,54 @@
     position: absolute;
     bottom: -80vh;
     background: rgba(black, .3);
-
     @include media(1205px) {
-      bottom: -466px;
+        bottom: -466px;
     }
-
     @include media(1088px) {
-      bottom: -487px;
+        bottom: -487px;
     }
-
     @include media(995px) {
-      bottom: -510px;
+        bottom: -510px;
     }
-
     @include media(965px) {
-      background: $black;
-      bottom: -540px;
+        background: $black;
+        bottom: -540px;
     }
-
     @include media(903px) {
-      bottom: -565px;
+        bottom: -565px;
     }
-
     @include media(820px) {
-      bottom: -595px;
+        bottom: -595px;
     }
-
     @include media(762px) {
-      bottom: -630px;
+        bottom: -630px;
     }
-
     @include media(736px) {
-      bottom: -670px;
+        bottom: -670px;
     }
-
     @include media(683px) {
-      bottom: -690px;
+        bottom: -690px;
     }
-
     @include media(677px) {
-      bottom: -840px;
+        bottom: -840px;
     }
-
     @include media(617px) {
-      bottom: -981px;
+        bottom: -981px;
     }
-
     @include media(525px) {
-      bottom: -1030px;
+        bottom: -1030px;
     }
-
     @include media(522px) {
-      bottom: -1097px;
+        bottom: -1097px;
     }
-
     @include media(455px) {
-      bottom: -1150px;
+        bottom: -1150px;
     }
-
     @include media(408px) {
-      bottom: -1220px;
+        bottom: -1220px;
     }
-
     @include media(385px) {
-      bottom: -1260px;
+        bottom: -1260px;
     }
 
     .bulbInfoUL {
@@ -116,25 +97,9 @@
             float: left;
             width: 25%;
             padding: 15px 5px 15px 15px;
-
             @include media(616px) {
-              width:100%;
+                width: 100%;
             }
-            // @include media(1001px) {
-            //   width:50%;
-            // }
-            //
-            // @include media(910px) {
-            //   width: 95%;
-            // }
-
-            // @include media(820px) {
-            //   width: 50%;
-            // }
-            //
-            // @include media(777px) {
-            //   width: 95%;
-            // }
 
             h2 {
                 font-family: $amatica;

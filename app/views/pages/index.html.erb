@@ -1,81 +1,89 @@
 <div class="homeContainer" ng-controller="PagesIndexController as home">
-  <%= video_tag "Particle.mp4", {class: 'homeVideo'}, autoplay: true, loop: true%>
 
-<div class="homeHeaderContainer">
-  <h2 class="homeHeaderH2">StandUp<%= image_tag("lightbulb.png", :alt => "Idea by Davo Sime from the Noun Project", :class => "headerIcon") %>
-</h2>
-  <p class="homeHeaderP">
-    Share, interact and collaborate with the wider dev community.
-  </p>
-</div>
+    <%= video_tag "Particle.mp4", {class: 'homeVideo'}, autoplay: true, loop: true%>
 
-<div class="homeBtnContainer">
-<li class="homeAboutBtn" ng-click=home.scrollBottom()>Learn More</li>
-<li class="homeLoginBtn"><%= link_to "Continue", 'https://virtual-standup.herokuapp.com/auth/google_oauth2' %></li>
-</div>
+    <div class="homeHeaderContainer">
+        <h2 class="homeHeaderH2">StandUp<%= image_tag("lightbulb.png", :alt => "Idea by Davo Sime from the Noun Project", :class => "headerIcon") %></h2>
+        <p class="homeHeaderP">Share, interact and collaborate with the wider dev community.</p>
+    </div>
 
+    <div class="homeBtnContainer">
+    <li class="homeAboutBtn" ng-click=home.scrollBottom()>Learn More</li>
+    <li class="homeLoginBtn"><%= link_to "Continue", 'https://virtual-standup.herokuapp.com/auth/google_oauth2' %></li>
+    </div>
 
 <div class="aboutContainer">
-  <h2 class="aboutH2">About</h2>
 
-  <ul class="aboutUL">
+    <h2 class="aboutH2">About</h2>
 
-    <li class="aboutLI">
-      <h2>Post a Bulb</h2>
-      <p>
-        There are ups and downs to every project. That's why instead of posting plain old status updates, Standup Users post bulbs. Bulbs have four components, read about them below!
-      </p>
-    </li>
-    <li class="aboutLI">
-      <h2>Be a Part of the Bulb Community!</h2>
-      <p>
-        Cheer on, sympathize or share your knowledge with others by liking and commenting on their bulbs in the Bulb Timeline.
-      </p>
-      <li class="aboutLI">
-        <h2>View Progress Over Time</h2>
-        <p>
-          Track your state of mind. Monitor your 'panic level' over time and see how far you've come when last week's dim bulb is this week's piece of cake.
-        </p>
-      </li>
-  </ul>
+    <ul class="aboutUL">
+
+        <li class="aboutLI">
+            <h2>Post a Bulb</h2>
+            <p>
+                There are ups and downs to every project. That's why instead of posting plain old status updates, Standup Users post bulbs. Bulbs have four components, read about them below!
+            </p>
+        </li>
+
+        <li class="aboutLI">
+            <h2>Be a Part of the Bulb Community!</h2>
+            <p>
+                Cheer on, sympathize or share your knowledge with others by liking and commenting on their bulbs in the Bulb Timeline.
+            </p>
+        </li>
+
+        <li class="aboutLI">
+            <h2>View Progress Over Time</h2>
+            <p>
+                Track your state of mind. Monitor your 'panic level' over time and see how far you've come when last week's dim bulb is this week's piece of cake.
+            </p>
+        </li>
+
+    </ul>
 </div>
 
 <div class="bulbInfoContainer">
 
-  <ul class="bulbInfoUL">
+    <ul class="bulbInfoUL">
 
-    <li class="bulbInfoLI">
-      <%= image_tag("brightbulb.png", :alt => "lamp by Elves Sousa from the Noun Project", :class => "homeFooterIcon") %>
-      <h2>Bright Bulb</h2>
-      <p>
-        A bright bulb could be a recent breakthrough or aha moment, an inspiring conversation or a feel-good moment. What's making you love your job right now?
-      </p>
-    </li>
-    <li class="bulbInfoLI">
-      <%= image_tag("dimbulb.png", :alt => "lamp by Elves Sousa from the Noun Project", :class => "homeFooterIcon") %>
-      <h2>Dim Bulb</h2>
-      <p>
-        A dim bulb is the opposite of a bright bulb. Whatever niggling anxiety, pet peeve or massive soul-crushing issue made you wake up on the wrong side of the bed is your dim bulb.
-      </p>
-    </li>
-    <li class="bulbInfoLI">
-      <%= image_tag("blocker.png", :alt => "wall by TDL-LONDON from the Noun Project", :class => "homeFooterIcon") %>
-        <h2>Blocker</h2>
-        <p>
-          Your blocker is anything that's keeping you from doing what you need to do, whether it's a root canal, a software bug or your own lack of understanding.
-        </p>
-      </li>
-      <li class="bulbInfoLI">
-        <%= image_tag("panic.png", :alt => "Head by Eliricon from the Noun Project", :class => "homeFooterIcon") %>
-        <h2>Panic Score</h2>
-        <p>
-          On a scale of 1-10, how panicked are you feeling? 1 is your happy place, 10 is total meltdown, you take it from there.
-        </p>
-      </li>
-  </ul>
-  <div class="backToTopBtn" ng-click="home.scrollTop()">
-    Back to Top
-  </div>
+        <li class="bulbInfoLI">
+            <%= image_tag("brightbulb.png", :alt => "lamp by Elves Sousa from the Noun Project", :class => "homeFooterIcon") %>
+            <h2>Bright Bulb</h2>
+            <p>
+                A bright bulb could be a recent breakthrough or aha moment, an inspiring conversation or a feel-good moment. What's making you love your job right now?
+            </p>
+        </li>
+
+        <li class="bulbInfoLI">
+            <%= image_tag("dimbulb.png", :alt => "lamp by Elves Sousa from the Noun Project", :class => "homeFooterIcon") %>
+            <h2>Dim Bulb</h2>
+            <p>
+                A dim bulb is the opposite of a bright bulb. Whatever niggling anxiety, pet peeve or massive soul-crushing issue made you wake up on the wrong side of the bed is your dim bulb.
+            </p>
+        </li>
+
+        <li class="bulbInfoLI">
+            <%= image_tag("blocker.png", :alt => "wall by TDL-LONDON from the Noun Project", :class => "homeFooterIcon") %>
+            <h2>Blocker</h2>
+            <p>
+                Your blocker is anything that's keeping you from doing what you need to do, whether it's a root canal, a software bug or your own lack of understanding.
+            </p>
+        </li>
+
+        <li class="bulbInfoLI">
+            <%= image_tag("panic.png", :alt => "Head by Eliricon from the Noun Project", :class => "homeFooterIcon") %>
+            <h2>Panic Score</h2>
+            <p>
+                On a scale of 1-10, how panicked are you feeling? 1 is your happy place, 10 is total meltdown, you take it from there.
+            </p>
+        </li>
+
+    </ul>
+
+    <div class="backToTopBtn" ng-click="home.scrollTop()">
+        Back to Top
+    </div>
+    
 </div>
 
 </div>

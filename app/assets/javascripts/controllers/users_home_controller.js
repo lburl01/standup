@@ -1,7 +1,5 @@
 angular.module('standupApp').controller('UsersHomeController', ["getBulbsService", function(getBulbsService) {
 
-    this.message = 'in UsersHomeController';
-
     this.scores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     this.bulb = {
@@ -20,9 +18,6 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
             type: 'POST',
             url: 'home',
             data: this.bulb,
-            success: function() {
-                // do something?
-            }
         });
         window.location.href = "/bulbs/index";
     };
@@ -52,7 +47,6 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
 
     self.getHistory = function() {
         history.then(function(response) {
-            // console.log(response);
             self.bulbHist = response;
             self.panicScore(self.bulbHist);
         });
@@ -88,42 +82,42 @@ angular.module('standupApp').controller('UsersHomeController', ["getBulbsService
             var left = 20;
 
             if (scores[count].score === 0) {
-              self.background = 'none';
+                self.background = 'none';
             } else if (scores[count].score === 1) {
-              self.background = "#FDEDEC";
+                self.background = "#FDEDEC";
             } else if (scores[count].score === 2) {
-              self.background = '#FADBD8';
+                self.background = '#FADBD8';
             } else if (scores[count].score === 3) {
-              self.background = '#F5B7B1';
+                self.background = '#F5B7B1';
             } else if (scores[count].score === 4) {
-              self.background = '#F1948A';
+                self.background = '#F1948A';
             } else if (scores[count].score === 5) {
-              self.background = '#EC7063';
+                self.background = '#EC7063';
             } else if (scores[count].score === 6) {
-              self.background = '#E74C3C';
+                self.background = '#E74C3C';
             } else if (scores[count].score === 7) {
-              self.background = '#CB4335';
+                self.background = '#CB4335';
             } else if (scores[count].score === 8) {
-              self.background = '#B03A2E';
+                self.background = '#B03A2E';
             } else if (scores[count].score === 9) {
-              self.background = '#943126';
+                self.background = '#943126';
             } else if (scores[count].score === 10) {
-              self.background = '#78281F';
+                self.background = '#78281F';
             }
 
             var bar = $('<li>').attr('class', 'bar').css({
                 "height": height,
                 "width": width,
                 "background": self.background
-            }).text(scores[count].time).appendTo('.graphContainer').append('<p>'+ scores[count].score + '</p>');
+            }).text(scores[count].time).appendTo('.graphContainer').append('<p>' + scores[count].score + '</p>');
         }
     };
 
     self.toggleLightSwitch = function() {
-      self.on = !self.on;
-      $('.yellow').toggleClass('yellowOff');
-      $('.usersHomeContainer').toggleClass('off');
-      $('.lamp').toggleClass('illuminate');
+        self.on = !self.on;
+        $('.yellow').toggleClass('yellowOff');
+        $('.usersHomeContainer').toggleClass('off');
+        $('.lamp').toggleClass('illuminate');
     };
 
     self.getHistory();

@@ -6,7 +6,6 @@ angular.module('standupApp').controller('BulbsIndexController', ["$http", "getBu
 
     this.loadBulbs = function() {
         currentBulb.then(function(response) {
-            // console.log(response);
             self.allBulbs = response;
         });
     };
@@ -23,35 +22,30 @@ angular.module('standupApp').controller('BulbsIndexController', ["$http", "getBu
     };
 
     self.postComment = function(comment) {
-      $.ajax({
-          type: 'POST',
-          url: 'index.json',
-          data: comment,
-          success: function() {
-            // do something?
-          }
-      });
-      location.reload();
+        $.ajax({
+            type: 'POST',
+            url: 'index.json',
+            data: comment
+        });
+        location.reload();
     };
 
     self.incrementLikes = function(bulb, likes, bulbId) {
-      self.newLike = likes+1;
-      bulb.show = true;
+        self.newLike = likes + 1;
+        bulb.show = true;
 
-      $.ajax({
-        type: 'PATCH',
-        url: "increment/" + bulbId,
-        data: bulbId,
-        success: function() {
-          //do something?
-        }
-      });
+        $.ajax({
+            type: 'PATCH',
+            url: "increment/" + bulbId,
+            data: bulbId
+        });
     };
 
     self.toggleLightSwitch = function() {
-      self.on = !self.on;
-      $('.bulbsContainer').toggleClass('off');
-      $('.yellow').toggleClass('yellowOff');
+        self.on = !self.on;
+        $('.bulbsContainer').toggleClass('off');
+        $('.yellow').toggleClass('yellowOff');
     };
+
     this.loadBulbs();
 }]);

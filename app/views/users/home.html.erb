@@ -1,4 +1,5 @@
 <div class="usersHomeContainer" ng-controller="UsersHomeController as user">
+
     <nav class="userHomeNav">
       <div class="title">
         <div class="yellow">
@@ -22,10 +23,14 @@
 
 
     <form class="bulbForm" name="bulbForm">
+
       <div class="lampOn">
       </div>
+
       <%= image_tag("lamp.png", :alt => "lamp by Antonieta Gomez from the Noun Project", :class => "lamp") %>
+
       <h2>Create a Bulb</h2>
+
         <textarea class="brightBulb" name="brightBulb" ng-model="user.bulb.bright" placeholder="Share a bright bulb"></textarea>
 
         <textarea class="dimBulb" name="dimBulb" ng-model="user.bulb.dim" placeholder="Share a dim bulb"></textarea>
@@ -39,6 +44,7 @@
         </select>
 
         <button type="button" name="submitBulb" ng-click="user.createBulb(bulbForm.brightBulb.$viewValue, bulbForm.dimBulb.$viewValue, bulbForm.blocker.$viewValue, user.score)">Post</button>
+
     </form>
 
     <div class="btnContainer">
@@ -54,13 +60,16 @@
       </div>
 
       <button type='button' class="statsToTopBtn" ng-click="user.scrollTop()">Back to Top</button>
+
     </div>
 
     <div class="histContainer">
+
       <h1>History</h1><hr>
       <h2>This is where all your bulbs live, ordered reverse-chronologically (newest on top).</h2>
 
       <div class="bulbCard" ng-repeat="bulb in user.bulbHist | orderBy: '-'">
+
         <ul class="bulbList">
           <li>
             <p>{{bulb.created_at}}</p>
@@ -69,24 +78,28 @@
           <li>
             <p class='likes' ng-model="bulb.likes">Likes: {{bulb.likes}}</p>
           </li>
+
           <li>
             <%= image_tag("brightbulb.png", :alt => "lamp by Elves Sousa from the Noun Project", :class => "bulbIcon") %>
             <p>{{bulb.bright}}</p>
           </li>
+
           <li>
             <%= image_tag("dimbulb.png", :alt => "lamp by Elves Sousa from the Noun Project", :class => "bulbIcon") %>
             <p>{{bulb.dim}}</p>
           </li>
+
           <li>
             <%= image_tag("blocker.png", :alt => "wall by TDL-LONDON from the Noun Project", :class => "bulbIcon") %>
             <p>{{bulb.blocked}}</p>
           </li>
+
           <li>
             <%= image_tag("panic.png", :alt => "Head by Eliricon from the Noun Project", :class => "bulbIcon") %>
             <p>Panic Score: {{bulb.panic_score}}</p>
           </li>
+          
       </div>
-
 
       <button type='button' class="histToTopBtn" ng-click="user.scrollTop()">Back to Top</button>
     </div>

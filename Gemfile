@@ -21,6 +21,7 @@ gem 'pry-rails'
 gem 'google-api-client', '0.8.2', require: 'google/api_client'
 gem "omniauth-google-oauth2", :git => 'https://github.com/zquestz/omniauth-google-oauth2', :branch => 'master'
 gem "figaro"
+gem 'will_paginate', '~> 3.1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
